@@ -431,7 +431,7 @@ function influencerCost() {
 		// cost editor
 		const editorWrapper = document.createElement("div");
 		editorWrapper.className =
-			"border rounded-md px-3 py-1 flex items-center space-x-2 text-sm";
+			"border rounded-md px-3 py-2 flex items-center space-x-2 text-sm";
 
 		const select = document.createElement("select");
 		select.innerHTML = `<option value="₹">₹</option>`;
@@ -481,7 +481,7 @@ function influencerCost() {
 				);
 
 				const name = e.target.closest(".edit-cost").dataset.name;
-				
+
 				// clear old
 				deliverablesContainer.innerHTML = "";
 				currentRows = [];
