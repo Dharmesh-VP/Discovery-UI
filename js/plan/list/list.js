@@ -413,6 +413,7 @@ function influencerCost() {
 	const deliverablesContainer = document.getElementById(
 		"deliverablesContainer",
 	);
+	const title = document.getElementById("influencerCostTitle");
 
 	let currentCostTrigger = null;
 	let currentRows = []; // holds {label, cost, inputEl} for each deliverable
@@ -430,7 +431,7 @@ function influencerCost() {
 		// cost editor
 		const editorWrapper = document.createElement("div");
 		editorWrapper.className =
-			"border rounded-md px-3 py-1 flex items-center space-x-2";
+			"border rounded-md px-3 py-1 flex items-center space-x-2 text-sm";
 
 		const select = document.createElement("select");
 		select.innerHTML = `<option value="₹">₹</option>`;
@@ -475,13 +476,17 @@ function influencerCost() {
 					.closest(".edit-cost")
 					.querySelector(".cost-value");
 
-				// parse deliverables JSON from trigger container
 				const data = JSON.parse(
 					e.target.closest(".edit-cost").dataset.deliverables,
 				);
+
+				const name = e.target.closest(".edit-cost").dataset.name;
+				
 				// clear old
 				deliverablesContainer.innerHTML = "";
 				currentRows = [];
+
+				title.innerHTML = `Influencer Cost for ${name}`;
 
 				// build rows
 				data.forEach((item) => {
@@ -785,7 +790,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	setupStatusCells();
 
 	// Influencer Costs...................................................................................................................................
-	
+
 	influencerCost();
 
 	// .....................................................................................................................................................

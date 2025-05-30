@@ -1,11 +1,11 @@
-const buttons = document.querySelectorAll(".platformIconsEdit");
+const buttonsPlatFormEdit = document.querySelectorAll(".platformIconsEdit");
 
-buttons.forEach((button) => {
+buttonsPlatFormEdit.forEach((button) => {
 	button.addEventListener("click", () => {
 		const clickedImg = button.querySelector("img");
 		const clickedPlatform = getPlatform(clickedImg);
 
-		buttons.forEach((btn) => {
+		buttonsPlatFormEdit.forEach((btn) => {
 			const img = btn.querySelector("img");
 			const platform = getPlatform(img);
 

@@ -3,6 +3,7 @@ const contactOverlay = document.getElementById("contactDetailsOverlay");
 const unlockedState = document.getElementById("unlockedState");
 const lockedState = document.getElementById("lockedState");
 const closeBtn = document.getElementById("closeContactDetails");
+const saveBtn = document.getElementById("saveContactDetails");
 const cancelBtn = document.getElementById("cancelContactDetails");
 const emailContainer = document.getElementById("emailContainer");
 const phoneContainer = document.getElementById("phoneContainer");
@@ -109,8 +110,13 @@ document.getElementById("unlockBtn")?.addEventListener("click", () => {
 
 // 🧹 Close Overlay Function
 function closeContactDetailsOverlay() {
+	// Hide overlay
 	contactOverlay.classList.remove("opacity-100");
 	contactOverlay.classList.add("opacity-0", "pointer-events-none");
+
+	// Clear input containers
+	emailContainer.innerHTML = "";
+	phoneContainer.innerHTML = "";
 }
 
 // ❌ Close Button & Cancel
@@ -123,3 +129,12 @@ contactOverlay?.addEventListener("click", (e) => {
 		closeContactDetailsOverlay();
 	}
 });
+
+saveBtn?.addEventListener("click", () => {
+	// You’d typically handle saving data here first
+	// e.g. send to backend or update global state
+
+	// Then reset the modal
+	closeContactDetailsOverlay();
+});
+

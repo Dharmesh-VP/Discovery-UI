@@ -107,7 +107,7 @@
 					
 					<!-- Add dropdown -->
 					<div id="ddAdd" class="hidden absolute top-full mt-2 right-0 w-48 bg-white border rounded shadow-lg  z-50">
-						<ul class="p-1 text-[#474747] ">
+						<ul class="p-1 text-[#474747] space-y-2.5">
 							<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"> <img src="../../icons/search.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Discovery</span></li>
 							<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/Star.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Favorites</span></li>
 							<li id="openManualBtn" class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/UploadSimple.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add Manually</span></li>
@@ -124,7 +124,7 @@
 					<!-- Share dropdown -->
 					<div id="ddShare" class="w-[480px] min-w-fit hidden absolute top-full mt-2 right-0 bg-white border rounded-lg shadow-lg z-50 text-[#191919] py-3 space-y-4" onclick="event.stopPropagation()">
 						<div class="flex justify-between items-center border-b px-6 pb-3">
-							<h2 class="">Share This File</h2>
+							<h2 class="text-lg">Share This File</h2>
 							<div class="flex justify-around items-center ">
 								<img src="../../icons/LinkSimple.svg" alt="" class="h-4 w-4" />
 								<button id="copyLink" class="text-blue-600 text-sm ml-2">Copy link</button>
@@ -134,17 +134,17 @@
 						<div class="px-6 space-y-4 overflow-auto">
 							<div class="flex justify-between items-center">
 								<div class="flex space-x-2 border rounded px-3 py-1 grow">
-									<input type="email" placeholder="Invite others by name@email.com" class="grow outline-none">
+									<input type="email" placeholder="Invite others by name@email.com" class="grow outline-none placeholder:text-sm">
 									<select class="rounded px-2 py-1 border-0 shrink text-sm text-[#474747] outline-none">
 										<option>can view</option>
 										<option>can edit</option>
 									</select>
 								</div>
-								<button class="px-3 pb-2 pt-2.5 ml-2 bg-[#838383] text-white rounded-md disabled:opacity-20 shrink" disabled>Invite</button>
+								<button class="px-3 py-1.5 ml-2 bg-[#838383] text-white rounded-md disabled:opacity-20 shrink" disabled>Invite</button>
 							</div>
 							<div>
 								<p class="text-[#656565] mb-3 ">Who has Access</p>
-								<ul class="mt-2 space-y-2 max-h-14 overflow-auto">
+								<ul class="mt-2 space-y-2 max-h-14 overflow-auto text-sm">
 									<li class="flex items-center justify-between ">
 										<div class="flex items-center space-x-2">
 											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
@@ -241,7 +241,7 @@
 				<div class="bg-white rounded-xl w-full max-w-md  text-[#191919] relative">
 					<div class="flex justify-between items-center border-b px-6 py-3">
 						<div class="flex justify-between items-center w-full">
-							<h2 class=" text-base">Edit Plan</h2>
+							<h2 class=" text-lg">Edit Plan</h2>
 							<img id="closeEditPlanModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
 						</div>
 					</div>
@@ -570,23 +570,23 @@
 											<!-- Status Dropdown Menu -->
 											<div class="status-dropdown hidden absolute left-0 top-full mt-1 w-36 bg-white rounded-lg border shadow-lg z-10">
 												<ul class="py-1">
-													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Prospects" data-color="blue">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 rounded-2xl flex justify-between cursor-pointer" data-status="Prospects" data-color="blue">
 														<div class="text-blue-500 py-1 px-3 rounded-2xl bg-blue-50">Prospects</div>
 														<span class="check-icon"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
 													</li>
-													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Outreached" data-color="yellow">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 rounded-2xl flex justify-between cursor-pointer" data-status="Outreached" data-color="yellow">
 														<div class="text-yellow-500 py-1 px-3 rounded-2xl bg-yellow-50">Outreached</div>
 														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
 													</li>
-													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Negotiations" data-color="orange">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 rounded-2xl flex justify-between cursor-pointer" data-status="Negotiations" data-color="orange">
 														<div class="text-orange-500 py-1 px-3 rounded-2xl bg-orange-50">Negotiations</div>
 														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
 													</li>
-													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Hired" data-color="green">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 rounded-2xl flex justify-between cursor-pointer" data-status="Hired" data-color="green">
 														<div class="text-green-500 py-1 px-3 rounded-2xl bg-green-50">Hired</div>
 														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
 													</li>
-													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Rejected" data-color="red">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 rounded-2xl flex justify-between cursor-pointer" data-status="Rejected" data-color="red">
 														<div class="text-red-500 py-1 px-3 rounded-2xl bg-red-50">Rejected</div>
 														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
 													</li>
@@ -597,10 +597,7 @@
 									
 									<!-- Edit Influencer Cost -->
 									<td class="min-w-[8.25rem] text-center">
-										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-deliverables='[
-					{"label":"1 Instagram Image","cost":10000},
-					{"label":"1 Instagram Story","cost":5000}
-					]'>
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-name="Virat Kohli" data-deliverables='[{"label":"1 Instagram Image","cost":10000},{"label":"1 Instagram Story","cost":5000}]'>
 											<span class="cost-value">₹15,000</span>
 											<img src="../../icons/PencilSimpleLine.svg" alt="Edit cost" class="edit-influencer-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
 										</div>
@@ -701,10 +698,7 @@
 									
 									<!-- Edit Influencer Cost -->
 									<td class="min-w-[8.25rem] text-center">
-										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-deliverables='[
-								{"label":"1 Instagram Image","cost":0},
-								{"label":"1 Instagram Story","cost":0}
-								]'>
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-name="Sonakshi Kohli" data-deliverables='[{"label":"1 Instagram Image","cost":0},{"label":"1 Instagram Story","cost":0}]'>
 											<span class="cost-value">₹0</span>
 											<img src="../../icons/PencilSimpleLine.svg" alt="Edit cost" class="edit-influencer-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
 										</div>
@@ -741,7 +735,7 @@
 												<span>Message</span>
 											</button>
 										</div>
-									</td>								
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -905,7 +899,7 @@
 	<div id="ManageColumnOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200">
 		<div class="p-6 bg-white max-w-2xl rounded-md shadow-lg w-full relative space-y-10">
 			<div class="flex justify-between items-center">
-				<h2 class="text-[#191919]">Manage Columns</h2>
+				<h2 class="text-[#191919] text-lg">Manage Columns</h2>
 				<img id="closeManageColumn" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
 			</div>
 			
@@ -930,23 +924,23 @@
 	<div id="editInfluencerCostModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex justify-center items-center transition-opacity duration-300">
 		<div class="bg-white rounded-md p-4 w-full max-w-md  text-[#191919] relative">
 			<div class="flex justify-between items-center pb-4">
-				<h2 class="text-lg">Edit Influencer Cost</h2>
+				<h2 id="influencerCostTitle" class="text-xl">Influencer Cost for </h2>
 				<img id="closeInfluencerCostModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
 			</div>
 			
 			<!-- ←— Dynamic deliverables go here —→ -->
-			<div class="flex w-full mb-3 text-xs text-[#656565]">
+			<div class="flex w-full mb-3 text-sm text-[#656565]">
 				<span class="w-1/2">Deliverables</span>
 				<span class="w-1/2">Cost</span>
 			</div>
 			<div id="deliverablesContainer" class="space-y-4"></div>
 			
-			<div class="flex justify-end items-center mt-3 space-x-4">
+			<div class="flex justify-end items-center mt-3 space-x-4 text-sm">
 				<span class="text-[#656565] ">Total Cost</span>
 				<span class="total-cost">₹ 0</span>
 			</div>
 			
-			<div class="flex justify-end mt-6 space-x-3">
+			<div class="flex justify-end mt-6 space-x-3 text-sm">
 				<button id="cancelInfluencerCostModal" class="px-6 h-[27px] border rounded text-[#656565] hover:border-[#191919] hover:text-[#191919]">
 					Cancel
 				</button>
@@ -971,13 +965,13 @@
 				<div class="space-y-3">
 					<label class="text-[#474747]">Choose platform</label>
 					<div class="flex items-center gap-2 mt-3">
-						<button type="button" class="bg-[#FCE9E9] platformIconsE px-2 py-1 text-[#474747] rounded-md flex items-center" style="border: 1px solid #E02424;">
+						<button type="button" class="bg-[#FCE9E9] platformIcons px-2 py-1 text-[#474747] rounded-md flex items-center" style="border: 1px solid #E02424;">
 							<img src="../../icons/instagram-icon.svg" alt="" class="mr-2"> Instagram
 						</button>
-						<button type="button" class="bg-white platformIconsE px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+						<button type="button" class="bg-white platformIcons px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
 							<img src="../../icons/youtube.svg" alt="" class="mr-2"> YouTube
 						</button>
-						<button type="button" class="bg-white platformIconsE px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+						<button type="button" class="bg-white platformIcons px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
 							<img src="../../icons/tiktok.svg" alt="" class="mr-2"> TikTok
 						</button>
 					</div>
@@ -1035,13 +1029,13 @@
 		<div id="unlockedState" class="relative w-full max-w-lg flex items-center justify-center transition duration-300 bg-white rounded-xl shadow-xl text-[#191919]">
 			<div id="lockedState" class=" absolute inset-0 backdrop-blur-sm flex items-center justify-center">
 				<div class="bg-white rounded-md border px-3 py-6 max-w-sm text-center">
-					<h3 class="text-base ">Unlock the contact details to reach out.</h3>
-					<p class=" text-[#656565] text-xs mt-2">
+					<h3 class="text-lg ">Unlock the contact details to reach out.</h3>
+					<p class=" text-[#656565] text-sm mt-2">
 						Unlock now to access direct contact info, key decision-makers, and personalized connection opportunities
 					</p>
-					<button id="unlockBtn" class="mt-4 w-full max-w-[204px] h-[27px]  inline-flex items-center justify-center space-x-2 bg-black text-white rounded-lg hover:bg-gray-800 transition text-xs">
+					<button id="unlockBtn" class="mt-4 w-full max-w-[204px] h-[27px]  inline-flex items-center justify-center space-x-2 bg-black text-white rounded-lg hover:bg-gray-800 transition text-sm">
 						<img src="../../icons/lock.svg" class="" alt="">
-						<span class="leading-none pt-0.5">Unlock Contact</span>
+						<span class="leading-none ">Unlock Contact</span>
 					</button>
 				</div>
 			</div>
@@ -1049,13 +1043,13 @@
 				<!-- Locked state overlays everything -->
 				
 				<div class="flex justify-between items-center">
-					<h2 class="text-lg">Contact Details for <span class="contact-name">Someone</span></h2>
+					<h2 class="text-xl">Contact Details for <span class="contact-name">Someone</span></h2>
 					<img id="closeContactDetails" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
 				</div>
 				
-				<div class="flex flex-col items-start space-y-2">
+				<div class="flex flex-col items-start space-y-2 text-sm">
 					<div class="flex items-center">
-						<label class="mr-1">Mark as Default</label>
+						<label class="mr-1 text-base">Mark as Default</label>
 						<img src="../../icons/Info.svg" alt="">
 					</div>
 					
@@ -1074,21 +1068,21 @@
 				<div class="flex justify-between">
 					<label class="">Email Address</label>
 					
-					<div id="emailContainer" class="flex flex-col space-y-2 max-w-full">
+					<div id="emailContainer" class="flex flex-col space-y-2 max-w-full text-sm">
 						<!-- JS will inject emails here -->
 					</div>
 				</div>
 				
 				<div class="flex justify-between">
 					<label class="">Phone Number</label>
-					<div id="phoneContainer" class="flex flex-col space-y-2 max-w-full">
+					<div id="phoneContainer" class="flex flex-col space-y-2 max-w-full text-sm">
 						<!-- JS will inject phones here -->
 					</div>
 				</div>
 				
 				<div class="flex justify-end space-x-3">
-					<button id="cancelContactDetails" class="px-8 h-[27px] border rounded-md hover:bg-gray-50 transition">Cancel</button>
-					<button class="px-8 h-[27px] bg-black text-white rounded-md hover:bg-gray-800 transition">Save</button>
+					<button id="cancelContactDetails" class="px-8 h-[27px] border rounded-md hover:bg-gray-50 transition text-sm">Cancel</button>
+					<button id="saveContactDetails" class="px-8 h-[27px] bg-black text-white rounded-md hover:bg-gray-800 transition text-sm">Save</button>
 				</div>
 			</div>
 		</div>
@@ -1098,11 +1092,11 @@
 		<div class="bg-white rounded-md p-4 w-full max-w-[420px]  text-[#191919] relative">
 			<!-- header -->
 			<div class="flex justify-between items-center pb-1.5">
-				<h2 id="clientCostTitle" class="text-lg">Client Cost</h2>
+				<h2 id="clientCostTitle" class="text-xl">Client Cost</h2>
 				<img id="closeClientCostModal" src="../../icons/X.svg" alt="Close" class="ml-3 h-4 w-4 hover:cursor-pointer" />
 			</div>
 			
-			<p id="clientCostSubtitle" class="text-xs text-[#656565] mb-4">
+			<p id="clientCostSubtitle" class="text-sm text-[#656565] mb-4">
 				You can update the client cost, which will be displayed to shared
 				recipients instead of the influencer’s original cost. The total influencer
 				cost is ₹0.
@@ -1118,7 +1112,7 @@
 				</div>
 			</div>
 			
-			<div class="flex justify-end space-x-3">
+			<div class="flex justify-end space-x-3 text-sm">
 				<button id="cancelClientCostModal" class="px-6 h-[27px] border rounded text-[#656565] hover:border-[#191919] hover:text-[#191919]">
 					Cancel
 				</button>
