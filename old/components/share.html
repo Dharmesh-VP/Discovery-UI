@@ -1,0 +1,93 @@
+<div class="flex justify-between items-center border-b px-6 pb-3">
+	<h2 class=" text-base">Share This File</h2>
+	<div class="flex justify-around items-center ">
+		<img src="../../icons/LinkSimple.svg" alt="" class="h-4 w-4" />
+		<button id="copyLink" class="text-blue-600 text-xs ml-2">Copy link</button>
+		<img src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" onclick="closeShare(event)" />
+	</div>
+</div>
+<div class="px-6 space-y-4 overflow-auto">
+	<div class="flex justify-between items-center">
+		<div class="flex space-x-2 border rounded px-3 py-1 grow">
+			<input type="email" placeholder="Invite others by name@email.com" class="grow outline-none">
+			<select class="rounded px-2 py-1 border-0 shrink text-[#474747] outline-none">
+				<option>can view</option>
+				<option>can edit</option>
+			</select>
+		</div>
+		<button class="px-3 pb-2 pt-2.5 ml-2 bg-[#838383] text-white rounded-md disabled:opacity-20 shrink" disabled>Invite</button>
+	</div>
+	<div>
+		<p class="text-[#656565] mb-3 text-sm">Who has Access</p>
+		<ul class="mt-2 space-y-2 max-h-14 overflow-auto">
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">John Doe</span>
+				</div>
+				
+				<div class="text-left w-12"><span class="text-[#474747]">can view</span></div>
+				
+			</li>
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">Amit Kumar</span>
+				</div>
+				<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+				
+			</li>
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">Amit Kumar</span>
+				</div>
+				<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+				
+			</li>
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">Amit Kumar</span>
+				</div>
+				<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+				
+			</li>
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">Amit Kumar</span>
+				</div>
+				<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+				
+			</li>
+			<li class="flex items-center justify-between ">
+				<div class="flex items-center space-x-2">
+					<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+					<span class="flex-1">Amit Kumar</span>
+				</div>
+				<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+				
+			</li>
+		</ul>
+	</div>
+	<!-- ✅ Style for 'Select lists to be shared' -->
+	<div>
+		<p class="text-[#656565] mb-3 text-sm">Select lists to be shared</p>
+		<div id="listCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 text-sm overflow-auto">
+			<!-- Dynamic checkboxes go here -->
+		</div>
+		
+	</div>
+	
+	<!-- ✅ Style for 'Select columns to be shared' -->
+	<div class="mt-6">
+		<p class="text-[#656565] mb-3 text-sm">Select columns to be shared</p>
+		<div id="columnCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 text-sm overflow-auto">
+			<!-- Dynamic checkboxes go here -->
+		</div>
+	</div>
+	
+</div>
+
+<script src="/js/plan/list/share.js"></script>

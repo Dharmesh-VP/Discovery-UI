@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Discovery Home</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="flex">
+	<aside id="sideBar" class="w-[216px] min-w-fit min-h-screen bg-black text-[#e2e2e2] flex flex-col p-6"></aside>
+	<div class="flex-1">
+		<header class="bg-white w-full px-6 py-4 flex items-center justify-between shadow-sm">
+			<!-- Left nav -->
+			<ul class="flex space-x-8">
+				<!-- Discover Influencers (active by default, no icon) -->
+				<li class="nav-tab flex items-center space-x-2 pb-2 border-b border-[#191919] text-gray-900 cursor-pointer transition-colors duration-200" data-has-icon="false">
+					<span class="text-sm">Discover Influencers</span>
+				</li>
+				
+				<!-- Unlocked Profiles -->
+				<li class="nav-tab flex items-center space-x-2 pb-2 border-b border-transparent text-gray-500 cursor-pointer transition-colors duration-200 hover:text-gray-900 hover:border-[#191919]" data-has-icon="true" data-default-icon="/icons/unlocked.svg" data-active-icon="/icons/unlocked_clicked.svg">
+					<img src="/icons/unlocked.svg" alt="Unlocked Profiles" class="w-5 h-5" />
+					<span class="text-sm">Unlocked Profiles</span>
+				</li>
+				
+				<!-- My Favorites -->
+				<li class="nav-tab flex items-center space-x-2 pb-2 border-b border-transparent text-gray-500 cursor-pointer transition-colors duration-200 hover:text-gray-900 hover:border-[#191919]" data-has-icon="true" data-default-icon="/icons/favorites.svg" data-active-icon="/icons/favorites_clicked.svg">
+					<img src="/icons/favorites.svg" alt="My Favorites" class="w-5 h-5" />
+					<span class="text-sm">My Favorites</span>
+				</li>
+			</ul>
+			
+			<!-- Right profile -->
+			<div class="flex items-center space-x-3">
+				<img src="/icons/Avator.png" alt="John Doe" class="w-8 h-8 rounded-full object-cover" />
+				<div>
+					<p class="text-sm font-medium text-gray-900">John Doe</p>
+					<p class="text-xs uppercase text-gray-500">Admin</p>
+				</div>
+			</div>
+		</header>
+		<main class="w-full px-6 py-4">
+			<div class="relative inline-flex items-center">
+				<h2 class="text-[16px] font-medium leading-none text-gray-500">
+					<span class="bg-gradient-to-r from-[#2D2BEF] to-[#A5047A] text-transparent bg-clip-text font-medium">Discover</span>
+					<span class="text-[#E42125] font-medium"> & evaluate</span>
+					<span class="text-[#6B7280]"> top influencers</span>
+				</h2>
+				
+				<!-- Flower PNG -->
+				<img src="//icons/flower.png" alt="Decor" class="absolute -top-2 -right-5 w-[17.84px] h-[13.52px]" />
+			</div>
+			<!-- Top Controls -->
+			<div class="space-y-4 text-[14px]">
+				<!-- Row 1: Platform / Search / Topics AI -->
+				<div class="flex items-center space-x-4">
+					<!-- Instagram -->
+					<button id="platformBtn" class="filter-btn">
+						<span class="flex">
+							<img src="/icons/instaIcon.svg" alt="Instagram" class="w-5 h-5 mr-2" />
+							<span class="text-sm font-medium">Instagram</span>
+						</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					
+					<!-- Search -->
+					<div class="relative flex-1">
+						<span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+							<img src="/icons/search.svg" alt="Search" class="w-5 h-5 mr-2" />
+						</span>
+						<input type="text" placeholder="Type keyword that you are looking for" class="w-full pl-10 pr-4 py-2 border border-[#E8E8E8] rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm" />
+					</div>
+					
+					<!-- Topics AI -->
+					<button id="topicsBtn" class="flex items-center px-4 py-2 bg-white border border-[#E8E8E8] rounded-md shadow-sm hover:bg-gray-50 focus:outline-none">
+						<span class="text-sm font-medium">Topics AI</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l.262.805a1 1 0 00.95.69h.846c.969 0 1.371 1.24.588 1.81l-.686.497a1 1 0 00-.364 1.118l.262.805c.3.921-.755 1.688-1.54 1.118l-.686-.497a1 1 0 00-1.176 0l-.686.497c-.784.57-1.838-.197-1.54-1.118l.262-.805a1 1 0 00-.364-1.118l-.686-.497c-.783-.57-.38-1.81.588-1.81h.846a1 1 0 00.95-.69l.262-.805z" />
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+				</div>
+				
+				<!-- Row 2: Quick filters + Show/Filters/More -->
+				<div class="flex flex-wrap items-center space-x-2 ">
+					<!-- Quick filter buttons (same as before) -->
+					<button class="filter-btn" data-filter="Location">
+						<span>Location</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn" data-filter="Followers">
+						<span>Followers</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn" data-filter="Gender">
+						<span>Gender</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn" data-filter="Age">
+						<span>Age</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					
+					<!-- Show Results -->
+					<button id="showResultsBtn" class="px-2 py-1 bg-black text-white rounded-md hover:bg-gray-800 focus:outline-none">
+						Show Results
+					</button>
+					
+					<!-- Filters -->
+					<button id="filtersBtn" class="filter-btn transition-colors">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L15 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 019 21v-7.586L3.293 6.707A1 1 0 013 6V4z" />
+						</svg>
+						<span>Filters</span>
+					</button>
+					
+					<!-- More -->
+					<button id="moreBtn" class=" px-2 py-1 bg-white border border-[#E8E8E8] rounded-md text-[#656565] hover:bg-gray-50 focus:outline-none">
+						…
+					</button>
+				</div>
+				
+				<!-- Expanded Filters Panel -->
+				<div id="filtersPanel" class="hidden mt-4 flex flex-wrap gap-2">
+					<!-- Row 2 -->
+					<button class="filter-btn">
+						<span>Language</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Interests</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Brand Affinity</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Partnerships</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Keywords</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Ethnicity</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					
+					<!-- Row 3 -->
+					<button class="filter-btn">
+						<span>Audience Type</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Engagement, %</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Reel Plays</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Contact</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Followers Growth</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+					<button class="filter-btn">
+						<span>Recent Posts</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</button>
+				</div>
+				
+				<!-- Chips -->
+				<div id="chipsContainer" class="flex flex-wrap items-center space-x-2 mt-4"></div>
+			</div>
+		</main>
+	</div>
+	
+	<!-- JS to handle active state -->
+	<script>
+		document.addEventListener('DOMContentLoaded', async function () {
+			try {
+				const response = await fetch('sidebar.html');
+				const html = await response.text();
+				const sidebar = document.getElementById('sideBar');
+				
+				// 1. Insert HTML first
+				sidebar.innerHTML = html;
+				
+				// 2. Execute scripts manually
+				const scripts = sidebar.querySelectorAll('script');
+				scripts.forEach(oldScript => {
+					const newScript = document.createElement('script');
+					
+					// Copy attributes
+					Array.from(oldScript.attributes).forEach(attr => {
+						newScript.setAttribute(attr.name, attr.value);
+					});
+					
+					// Handle inline scripts
+					if (oldScript.src) {
+						newScript.src = oldScript.src;
+					} else {
+						newScript.textContent = oldScript.textContent;
+					}
+					
+					// Replace old script with executable version
+					oldScript.parentNode.replaceChild(newScript, oldScript);
+				});
+				
+				// 3. Dispatch custom event
+				const event = new Event('sidebar-loaded');
+				document.dispatchEvent(event);
+				
+			} catch (error) {
+				console.error('Error loading sidebar:', error);
+			}
+			
+			
+			
+			
+			const filtersBtn = document.getElementById('filtersBtn');
+			const filtersPanel = document.getElementById('filtersPanel');
+			const chipsContainer = document.getElementById('chipsContainer');
+			const filterBtns = document.querySelectorAll('.filter-btn');
+			
+			// Toggle filters panel
+			filtersBtn.addEventListener('click', () => {
+				const open = filtersPanel.classList.toggle('hidden') === false;
+				filtersBtn.classList.toggle('border-[#E8E8E8]', !open);
+				filtersBtn.classList.toggle('text-[#656565] w-[12rem]', !open);
+				filtersBtn.classList.toggle('border-[#E42125]', open);
+				filtersBtn.classList.toggle('text-[#E42125]', open);
+			});
+			
+			// Stub: clicking a quick filter still adds a chip
+			filterBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					const name = btn.dataset.filter;
+					const val = prompt(`Select ${name}:`);
+					if (val) addChip(name, val);
+				});
+			});
+			
+			function addChip (filter, value) {
+				const chip = document.createElement('div');
+				chip.className = 'flex items-center bg-gray-200 text-[#656565] w-[12rem] px-3 py-1 rounded-full space-x-2';
+				chip.innerHTML = `
+            <span>${filter}: ${value}</span>
+        3<button type="button" class="text-gray-500 hover:text-[#656565] w-[12rem] focus:outline-none">&times;</button>
+            `;
+				chip.querySelector('button').addEventListener('click', () => {
+					chip.remove();
+					updateClearAll();
+				});
+				chipsContainer.appendChild(chip);
+				updateClearAll();
+			}
+			
+			function updateClearAll () {
+				// Remove existing clear-all
+				const existing = document.getElementById('clearAllBtn');
+				existing && existing.remove();
+				
+				const chips = chipsContainer.querySelectorAll('div');
+				if (chips.length) {
+					const btn = document.createElement('button');
+					btn.id = 'clearAllBtn';
+					btn.textContent = 'Clear all';
+					btn.className = 'text-red-500 text-sm ml-2 hover:underline focus:outline-none';
+					btn.addEventListener('click', () => {
+						chipsContainer.innerHTML = '';
+						btn.remove();
+					});
+					chipsContainer.appendChild(btn);
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>

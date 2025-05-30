@@ -1,0 +1,102 @@
+<!-- Logo + Bell -->
+
+<div class="flex items-center justify-between p-6">
+	<img src="/icons/vp-logo/vp-logo.png" srcset="
+          /icons/vp-logo/vp-logo.png   1x,
+          /icons/vp-logo/vp-logo@2x.png 2x,
+          /icons/vp-logo/vp-logo@3x.png 3x
+        " alt="Logo" class="w-auto h-auto" />
+	<img src="/icons/bell.svg" alt="Notifications" class="w-4 h-4" />
+</div>
+
+<!-- Nav -->
+<ul class="flex-1 space-y-3 bg-transparent p-4">
+	<!-- Dashboard -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+		<img src="/icons/dashboard.svg" data-default="/icons/dashboard.svg" data-active="/icons/dashboard_clicked.svg" alt="Dashboard" class="w-5  h-5" />
+		<span class="text-sm">Dashboard</span>
+	</li>
+	<div class="h-[0.5px] w-full bg-[#474747] self-stretch flex-grow-0"></div>
+	<!-- Discover Influencer -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+		<img src="/icons/discover.svg" data-default="/icons/discover.svg" data-active="/icons/discover_clicked.svg" alt="Discover Influencer" class="w-5 h-5" />
+		<span class="text-sm">Discover Influencer</span>
+	</li>
+	
+	<!-- Plans -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+		<img src="/icons/plans.svg" data-default="/icons/plans.svg" data-active="/icons/plans_clicked.svg" alt="Plans" class="w-5 h-5" />
+		<span class="text-sm">Plans</span>
+	</li>
+	
+	<!-- Reports -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+		<img src="/icons/reports.svg" data-default="/icons/reports.svg" data-active="/icons/reports_clicked.svg" alt="Reports" class="w-5 h-5" />
+		<span class="text-sm">Reports</span>
+	</li>
+	
+	<!-- Competitive Analysis -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+		<img src="/icons/competitive.svg" data-default="/icons/competitive.svg" data-active="/icons/competitive_clicked.svg" alt="Competitive Analysis" class="w-5 h-5" />
+		<span class="text-sm">Competitive Analysis</span>
+	</li>
+	
+	<div class="h-[0.5px] w-full bg-[#474747] self-stretch flex-grow-0"></div>
+	
+	<!-- Eng. Rate Calculator -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5">
+		<img src="/icons/calculator.svg" data-default="/icons/calculator.svg" data-active="/icons/calculator_clicked.svg" alt="Eng. Rate Calculator" class="w-5 h-5" />
+		<span class="text-sm">Eng. Rate Calculator</span>
+	</li>
+	
+	<!-- Lookalikes -->
+	<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5">
+		<img src="/icons/lookalikes.svg" data-default="/icons/lookalikes.svg" data-active="/icons/lookalikes_clicked.svg" alt="Lookalikes" class="w-5 h-5" />
+		<span class="text-sm">Lookalikes</span>
+	</li>
+</ul>
+
+
+<script>
+	const items = document.querySelectorAll('.nav-item'); // select all nav items :contentReference[oaicite:3]{index=3}
+	
+	items.forEach(item => {
+		item.addEventListener('click', () => { // hook click listener :contentReference[oaicite:4]{index=4}
+			// reset all items
+			items.forEach(i => {
+				i.classList.remove('bg-white/5', 'text-[#e8e8e8]'); // remove active classes :contentReference[oaicite:5]{index=5}
+				const img = i.querySelector('img');
+				img.src = img.dataset.default; // restore default icon
+			});
+			
+			// activate clicked item
+			item.classList.add('bg-white/5', 'text-white');
+			const img = item.querySelector('img');
+			img.src = img.dataset.active; // swap to clicked icon
+		});
+	});
+	
+	const tabs = document.querySelectorAll('.nav-tab');
+	
+	tabs.forEach(tab => {
+		tab.addEventListener('click', () => {
+			// Reset all tabs
+			tabs.forEach(t => {
+				t.classList.replace('border-[#191919]', 'border-transparent');
+				t.classList.replace('text-gray-900', 'text-gray-500');
+				if (t.dataset.hasIcon === 'true') {
+					const img = t.querySelector('img');
+					img.src = t.dataset.defaultIcon;
+				}
+			});
+			
+			// Activate clicked tab
+			tab.classList.replace('border-transparent', 'border-[#191919]');
+			tab.classList.replace('text-gray-500', 'text-gray-900');
+			if (tab.dataset.hasIcon === 'true') {
+				const img = tab.querySelector('img');
+				img.src = tab.dataset.activeIcon;
+			}
+		});
+	});
+</script>

@@ -1,0 +1,92 @@
+<div id="manualPanel" class="fixed flex flex-col inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 overflow-auto px-4 py-2 space-y-6 text-sm">
+	
+	<div class="flex justify-between items-center mb-5">
+		<h2 class="text-lg text-[#191919]">Add Influencers</h2>
+		<button id="closeManual" class="text-gray-500  hover:text-gray-800">✕</button>
+	</div>
+	
+	<div class="space-y-1.5">
+		<div class="text-[#474747]">Choose a List</div>
+		<button class="select-btn" style="padding-top: 8px; padding-bottom: 6px; border-radius: 4px;">
+			<span class="text-xs">Choose / Create a List</span>
+			<svg xmlns="http://www.w3.org/2000/svg" style="height: .75rem; width: .75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+			</svg>
+		</button>
+	</div>
+	
+	<!-- Choose Platform -->
+	<div class="space-y-1.5">
+		<div class=" text-[#474747]">Choose Platform</div>
+		<div class="platform-buttons flex items-center space-x-2 text-xs">
+			<button type="button" class="active flex text-[#191919] items-center bg-[#FCE9E9] rounded px-2 grow py-1.5" style="border: 1px solid #E02424;">
+				<img src="/icons/instagram-icon.svg" alt="IG" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">Instagram</span>
+			</button>
+			<button type="button" class="flex text-[#656565] items-center border rounded px-2 grow py-1.5">
+				<img src="/icons/youtube.svg" alt="" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">YouTube</span>
+			</button>
+			<button type="button" class="flex text-[#656565] items-center border rounded px-2 grow py-1.5">
+				<img src="/icons/tiktok.svg" alt="" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">TikTok</span>
+			</button>
+		</div>
+	</div>
+	
+	<!-- Add Influencers Textarea -->
+	<div class="mb-4">
+		<div class="text-[#474747] mb-1">Add Influencers</div>
+		<textarea rows="4" placeholder="Enter Instagram profiles in any of these formats (separate with commas).
+&bull; Full Link: ‘https://www.instagram.com/thetatvaindia/’
+&bull; Handle: ‘thetatvaindia’ or ‘@thetatvaindia’
+		" class="w-full border border-gray-300 rounded-md px-3 py-2 resize-none placeholder:text-xs text-gray-500 focus:ring-indigo-400 focus:outline-none min-h-[8rem] placeholder:leading-[22px]"></textarea>
+		<p class="mt-1 text-xs text-gray-400">
+			
+		</p>
+	</div>
+	
+	<div class="flex items-center justify-center text-gray-400">
+		<span class="border-t border-gray-200 flex-grow mr-3"></span>
+		<span class="text-xs">OR</span>
+		<span class="border-t border-gray-200 flex-grow ml-3"></span>
+	</div>
+	
+	<!-- CSV Buttons -->
+	<div class="flex space-x-3 mb-4 text-xs">
+		<button id="addInfluencerDownloadBtn" class="flex-1 flex items-center justify-center border border-gray-300 rounded-md px-3 py-1.5 hover:bg-gray-50 transition">
+			<img src="/icons/DownloadSimple.svg" alt="" class="h-4 w-4 mr-2" />
+			<span class="pt-0.5">Download Sample CSV</span>
+		</button>
+		<button id="addInfluencerUploadBtn" class="flex-1 flex items-center justify-center bg-black text-white rounded-md px-3 py-1.5 hover:bg-gray-800 transition">
+			<img src="/icons/UploadSimple-white.svg" alt="" class="h-4 w-4 mr-2" />
+			<span class="pt-0.5">Upload CSV</span>
+		</button>
+		<input type="file" id="addInfluencerFileInput" accept=".csv" class="hidden" />
+	</div>
+	
+	<!-- File Preview and Loader -->
+	<div id="addInfluencerFileStatus" class="hidden border rounded-md p-4 space-y-2">
+		<div class="flex justify-between items-center">
+			<div class="flex items-center space-x-2">
+				<img src="/icons/FileCsv.svg" alt="CSV" class="h-5 w-5" />
+				<div>
+					<p id="addInfluencerFileName" class="font-medium text-sm">File name</p>
+					<p id="addInfluencerFileSize" class="text-xs text-gray-500">Size</p>
+				</div>
+			</div>
+			<button id="addInfluencerCloseFileStatus" class="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+		</div>
+		<div class="flex items-center space-x-2">
+			<div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+				<div id="addInfluencerProgressBar" class="bg-black h-2 w-0 transition-all duration-300"></div>
+			</div>
+			<span id="addInfluencerProgressPercent" class="text-xs text-gray-500">0%</span>
+		</div>
+	</div>
+	
+	
+	<div class="flex grow items-end">
+		<div class="flex justify-between items-center gap-[0.5rem] w-full">
+			<button type="button" class="grow h-[2.125rem]  rounded-[0.25rem] border">Cancel</button>
+			<button type="button" class="grow h-[2.125rem] rounded-[0.25rem] bg-[#191919] text-white">Create</button>
+		</div>
+	</div>
+</div>

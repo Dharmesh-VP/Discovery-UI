@@ -1,0 +1,195 @@
+<header id="header" class="flex items-center justify-between bg-white py-4 px-6 border-b min-h-[65px] text-[#191919] text-xs shrink">
+	<!-- Left side: Logo + Title -->
+	<div class="flex items-center space-x-3">
+		<img src="../../icons/ArrowLeft.svg" alt="" class="mr-1 w-4 hover:cursor-pointer" onclick="history.back()">
+		<img src="../../icons/Avator.png" alt="Nivea" class="w-10 h-10 rounded-full">
+		<div>
+			<h1 class="font-semibold text-sm">Test Plan 1</h1>
+			<p class="text-gray-500 text-xs">Nivea | 07 Mar 2025</p>
+		</div>
+	</div>
+	
+	<!-- Right side: Buttons -->
+	<div class="relative flex items-center gap-2">
+		
+		<!-- Add Influencer -->
+		<div class="relative">
+			<button id="btnAdd" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-black text-white rounded">
+				<img src="../../icons/Plus.svg" alt="" class="" />
+				<span class=" leading-none translate-y-[1px]">Add Influencer</span>
+			</button>
+			
+			<!-- Add dropdown -->
+			<div id="ddAdd" class="hidden absolute top-full mt-2 right-0 w-48 bg-white border rounded shadow-lg  z-50">
+				<ul class="p-1 text-[#474747] text-sm">
+					<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"> <img src="../../icons/search.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Discovery</span></li>
+					<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/Star.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Favorites</span></li>
+					<li id="openManualBtn" class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/UploadSimple.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add Manually</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- Share File -->
+		<div class="relative">
+			<button id="btnShare" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-white border rounded hover:bg-gray-50">
+				<img src="../../icons/Share.svg" alt="" class="">
+				<span class=" leading-none translate-y-[1px]">Share File</span>
+			</button>
+			<!-- Share dropdown -->
+			<div id="ddShare" class="w-[480px] min-w-fit hidden absolute top-full mt-2 right-0 bg-white border rounded-lg shadow-lg z-50 text-[#191919] py-3 space-y-4" onclick="event.stopPropagation()">
+				<div class="flex justify-between items-center border-b px-6 pb-3">
+					<h2 class=" text-base">Share This File</h2>
+					<div class="flex justify-around items-center ">
+						<img src="../../icons/LinkSimple.svg" alt="" class="h-4 w-4" />
+						<button id="copyLink" class="text-blue-600 text-xs ml-2">Copy link</button>
+						<img src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" onclick="closeShare(event)" />
+					</div>
+				</div>
+				<div class="px-6 space-y-4 overflow-auto">
+					<div class="flex justify-between items-center">
+						<div class="flex space-x-2 border rounded px-3 py-1 grow">
+							<input type="email" placeholder="Invite others by name@email.com" class="grow outline-none">
+							<select class="rounded px-2 py-1 border-0 shrink text-[#474747] outline-none">
+								<option>can view</option>
+								<option>can edit</option>
+							</select>
+						</div>
+						<button class="px-3 pb-2 pt-2.5 ml-2 bg-[#838383] text-white rounded-md disabled:opacity-20 shrink" disabled>Invite</button>
+					</div>
+					<div>
+						<p class="text-[#656565] mb-3 text-sm">Who has Access</p>
+						<ul class="mt-2 space-y-2 max-h-14 overflow-auto">
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">John Doe</span>
+								</div>
+								
+								<div class="text-left w-12"><span class="text-[#474747]">can view</span></div>
+								
+							</li>
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">Amit Kumar</span>
+								</div>
+								<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+								
+							</li>
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">Amit Kumar</span>
+								</div>
+								<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+								
+							</li>
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">Amit Kumar</span>
+								</div>
+								<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+								
+							</li>
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">Amit Kumar</span>
+								</div>
+								<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+								
+							</li>
+							<li class="flex items-center justify-between ">
+								<div class="flex items-center space-x-2">
+									<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+									<span class="flex-1">Amit Kumar</span>
+								</div>
+								<div class="text-left w-12"><span class="text-[#474747]">can edit</span></div>
+								
+							</li>
+						</ul>
+					</div>
+					<!-- ✅ Style for 'Select lists to be shared' -->
+					<div>
+						<p class="text-[#656565] mb-3 text-sm">Select lists to be shared</p>
+						<div id="listCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 text-sm overflow-auto">
+							<!-- Dynamic checkboxes go here -->
+						</div>
+						
+					</div>
+					
+					<!-- ✅ Style for 'Select columns to be shared' -->
+					<div class="mt-6">
+						<p class="text-[#656565] mb-3 text-sm">Select columns to be shared</p>
+						<div id="columnCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 text-sm overflow-auto">
+							<!-- Dynamic checkboxes go here -->
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		<!-- More -->
+		<div class="relative">
+			<button id="btnMore" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-white border rounded hover:bg-gray-50">
+				<span class="text-sm leading-none translate-y-[-3px]">...</span>
+			</button>
+			
+			<!-- More dropdown -->
+			<div id="ddMore" class="hidden absolute top-full mt-2 right-0 w-40 bg-white border rounded shadow-lg z-50">
+				<ul class="p-1">
+					<li id="editPlan" class="flex items-center px-4 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/PencilSimpleLine.svg" alt="" class="w-4 mr-2"> Edit Plan</li>
+					<li class="flex items-center px-4 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/BoxArrowDown.svg" alt="" class="mr-2"> Archive Plan</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- Edit Details Modal -->
+	<div id="editPlanModal" class="fixed z-50 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200 text-sm">
+		<div class="bg-white rounded-xl w-full max-w-md text-sm text-[#191919] relative">
+			<div class="flex justify-between items-center border-b px-6 py-3">
+				<div class="flex justify-between items-center w-full">
+					<h2 class=" text-base">Edit Plan</h2>
+					<img id="closeEditPlanModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+				</div>
+			</div>
+			<div class="space-y-3 p-6">
+				<div class="">
+					<label class="text-[#474747]">Name of the Plan</label>
+					<input type="text" placeholder="Test Plan" class="w-full border rounded px-3 py-1 outline-none mt-2 placeholder:text-[#191919]">
+				</div>
+				<div id="brandDropdownWrapper" class="relative">
+					<label class="text-[#474747]">Brand Name</label>
+					<div class="mt-2">
+						<button id="brandDropdownToggle" class="border px-3 py-1 rounded w-full text-left">Select brand</button>
+						<div id="brandDropdownMenu" class="absolute bg-white border hidden z-10 w-full">
+							<input type="text" id="brandSearchInput" class="w-full px-3 py-1 border-b outline-non" placeholder="Search brand...">
+							<ul class="max-h-[200px] overflow-auto">
+								<li class="brand-option flex justify-between px-3 py-2 hover:bg-gray-100 cursor-pointer" data-value="Nivea">
+									Nivea <span class="check-icon hidden"><img src="../../icons/Check.svg" class="w-4" /></span>
+								</li>
+								<!-- more .brand-option -->
+							</ul>
+							<div id="addNewBrandOption" class="hidden px-3 py-2 bg-gray-50 text-red-500 cursor-pointer">
+								+ Add "<span id="newBrandText"></span>"
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="my-3 px-6 text-right">
+				<button class="px-4 py-1 bg-black text-white rounded">Save Changes</button>
+			</div>
+		</div>
+	</div>
+	
+	
+</header>

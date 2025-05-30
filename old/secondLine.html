@@ -1,0 +1,118 @@
+<button class="tab-button active whitespace-nowrap px-3 py-3 font-medium text-[#191919]" data-tab="all">
+	All <span class="font-medium">5</span>
+</button>
+<button class="tab-button whitespace-nowrap px-3 py-3 border-transparent font-medium text-[#656565]" data-tab="prospects">
+	Prospects <span class="font-medium">1</span>
+</button>
+<button class="tab-button whitespace-nowrap px-3 py-3 border-transparent font-medium text-[#656565]" data-tab="outreached">
+	Outreached <span class="font-medium">1</span>
+</button>
+<button class="tab-button whitespace-nowrap px-3 py-3 border-transparent font-medium text-[#656565]" data-tab="negotiations">
+	Negotiations <span class="font-medium">1</span>
+</button>
+<button class="tab-button whitespace-nowrap px-3 py-3 border-transparent font-medium text-[#656565]" data-tab="hired">
+	Hired <span class="font-medium">1</span>
+</button>
+<button class="tab-button whitespace-nowrap px-3 py-3 border-transparent font-medium text-[#656565]" data-tab="rejected">
+	Rejected <span class="font-medium">1</span>
+</button>
+
+<div id="statusDropdownWrapper" class="relative inline-block">
+	<button id="statusDropdownToggle" class="whitespace-nowrap px-5 pb-3 text-base">
+		&hellip;
+	</button>
+	<div id="statusDropdownMenu" class="status-dropdown hidden absolute left-0 top-full mt-1 w-48 bg-white rounded-lg border shadow-lg z-40">
+		<div class="p-2">
+			<input type="text" id="statusSearchInput" placeholder="Search/Create Status" class="w-full p-2 border rounded-md focus:outline-none text-sm" />
+		</div>
+		<!-- Inside your dropdown, after <ul> -->
+		<div id="addNewStatusOption" class="px-3 py-2 hover:bg-gray-50 cursor-pointer text-red-500 hidden">
+			+ Add <span id="newStatusText"></span>
+		</div>
+		
+		<ul class="py-1 max-h-60 overflow-y-auto">
+			<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Prospects" data-status="Prospects" data-color="blue">
+				<div class="flex items-center">
+					<span class="relative w-3 h-3 rounded-full border-2 border-blue-500 mr-2 flex items-center justify-center">
+						<span class="w-1 h-1 rounded-full border-2 border-blue-500"></span>
+					</span>
+					<span>Prospects</span>
+				</div>
+				<span class="check-icon"><img src="/icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+			</li>
+			
+			<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Outreached" data-status="Outreached" data-color="yellow">
+				<div class="flex items-center">
+					<span class="relative w-3 h-3 rounded-full border-2 border-yellow-500 mr-2 flex items-center justify-center">
+						<span class="w-1 h-1 rounded-full border-2 border-yellow-500"></span>
+					</span>
+					<span>Outreached</span>
+				</div>
+				<span class="check-icon hidden"><img src="/icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+			</li>
+			
+			<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="orange" data-color="orange">
+				<div class="flex items-center">
+					<span class="relative w-3 h-3 rounded-full border-2 border-orange-500 mr-2 flex items-center justify-center">
+						<span class="w-1 h-1 rounded-full border-2 border-orange-500"></span>
+					</span>
+					<span>Negotiations</span>
+				</div>
+				<span class="check-icon hidden"><img src="/icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+			</li>
+			
+			<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Hired" data-status="Hired" data-color="green">
+				<div class="flex items-center">
+					<span class="relative w-3 h-3 rounded-full border-2 border-green-500 mr-2 flex items-center justify-center">
+						<span class="w-1 h-1 rounded-full border-2 border-green-500"></span>
+					</span>
+					<span>Hired</span>
+				</div>
+				<span class="check-icon hidden"><img src="/icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+			</li>
+			
+			<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Rejected" data-status="Rejected" data-color="red">
+				<div class="flex items-center">
+					<span class="relative w-3 h-3 rounded-full border-2 border-red-500 mr-2 flex items-center justify-center">
+						<span class="w-1 h-1 rounded-full border-2 border-red-500"></span>
+					</span>
+					<span>Rejected</span>
+				</div>
+				<span class="check-icon hidden"><img src="/icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+			</li>
+		</ul>		
+		
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll('.tab-button').forEach(button => {
+		button.addEventListener('click', () => {
+			// Remove active text color from all buttons
+			document.querySelectorAll('.tab-button').forEach(btn => {
+				btn.classList.remove('text-[#191919]');
+				btn.classList.add('text-[#656565]');
+			});
+			
+			// Add active text color to clicked one
+			button.classList.remove('text-[#656565]');
+			button.classList.add('text-[#191919]');
+		});
+	});
+	
+	setupSearchableDropdown({
+		wrapperId: "statusDropdownWrapper",
+		toggleId: "statusDropdownToggle",
+		dropdownId: "statusDropdownMenu",
+		searchInputId: "statusSearchInput",
+		optionClass: "status-option",
+		addNewId: "addNewStatusOption",
+		newTextId: "newStatusText",
+		onSelect: (selectedStatus) => {
+			console.log("Selected status:", selectedStatus);
+			
+			// Optional: update the toggle button with the selected status
+			// document.getElementById("statusDropdownToggle").textContent = selectedStatus;
+		},
+	});
+</script>

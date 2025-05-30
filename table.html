@@ -1,0 +1,138 @@
+<div id="table" class="overflow-auto scroll-smooth min-h-full">
+	<div class="h-[68vh] w-full overflow-x-auto ios-scroll flex flex-col">
+		<table class="w-full min-w-[64rem] text-left relative table-auto text-sm">
+			<thead class=" text-[#474747] space-x-5 bg-gray-50 sticky top-0 z-30 ">
+				<tr class="border-b  bg-gray-50 relative">
+					<td class="py-2 px-4  lg:min-w-[12rem] xl:min-w-[13rem] min-w-[14rem] sticky left-0 z-30 bg-gray-50">
+						<div class="flex items-center space-x-2">
+							<input id="selectAll" type="checkbox" class="w-3 h-3" />
+							<span class="pt-0.5">Influencer Profile</span>
+							<img src="../../icons/ArrowDown.svg" alt="Arrow Down" class="w-3 h-3" />
+						</div>
+					</td>
+					<td class=" min-w-[8.25rem] text-center">Location</td>
+					<td class=" min-w-[8.25rem] text-center pr-5">Status</td>
+					<td class=" min-w-[8.25rem] text-center">Influencer Cost</td>
+					<td class=" min-w-[8.25rem] text-center">Client Cost</td>
+					<td class=" min-w-[8.25rem] text-center">Followers</td>
+					<td class=" min-w-[8.25rem] text-center"><span class="flex justify-center items-center">ER <img src="../../icons/Info.svg" alt="" class="w-3 ml-1" /></span></td>
+					<td class=" min-w-[15.25rem] text-center">Deliverables</td>
+					<td class="min-w-[8.25rem] text-center whitespace-nowrap">Avg Views</td>
+					<td class="min-w-[8.25rem] text-center whitespace-nowrap">Avg Likes</td>
+					<td class="min-w-[8.25rem] text-center whitespace-nowrap">Message</td>
+				</tr>
+			</thead>
+			<tbody class="bg-white space-x-5">
+				<tr class="group hover:bg-gray-50 relative border-b">
+					<!-- Serial / Checkbox → Input -->
+					<td class=" lg:min-w-[12rem] xl:min-w-[13rem] 2xl:min-w-[14rem] sticky left-0 z-20 bg-white group-hover:bg-gray-50">
+						<div class="pl-4 py-3 flex justify-between items-center">
+							<div class="flex items-center space-x-1.5 ">
+								<div class="relative flex flex-col items-center w-3 group ">
+									<p class="flex-1/2 w-full duration-100 group-hover:hidden text-center text-black">1</p>
+									<input type="checkbox" class="flex-1/2 w-full hidden duration-100 group-hover:block" />
+								</div>
+								<div class="rounded-full w-8 h-8 flex justify-center items-center">
+									<img src="../../icons/viratKohli.png" alt="">
+								</div>
+								<p class="font-medium text-gray-900 text-base">Virat Kohli</p>
+							</div>
+							
+							<!-- TRIGGER ICON -->
+							<img src="../../icons/AddressBook.svg" alt="Open Contact" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:cursor-pointer" data-name="Virat Kohli" data-emails='["virat@gmail.com", "virat23@gmail.com"]' data-phones='["+91 9999999999"]' onclick="openContactModal(this)" />
+						</div>
+					</td>
+					
+					<!-- Platform Icon -->
+					<td class="min-w-[8.25rem] text-center">
+						Mumbai
+					</td>
+					
+					<!-- Status -->
+					<td class="min-w-[8.25rem] text-center">
+						<div class="status-cell relative flex justify-center items-center group">
+							<div class="status-display rounded-2xl bg-blue-50 text-blue-500 py-1 px-3 flex items-center">
+								<span>Prospects</span>
+							</div>
+							<!-- toggle caret (hidden until hover) -->
+							<img src="../../icons/CaretDown.svg" alt="Toggle status menu" class="status-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+							
+							<!-- Status Dropdown Menu -->
+							<div class="status-dropdown hidden absolute left-0 top-full mt-1 w-36 bg-white rounded-lg border shadow-lg z-10">
+								<ul class="py-1">
+									<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Prospects" data-color="blue">
+										<div class="text-blue-500 py-1 px-3 rounded-2xl bg-blue-50">Prospects</div>
+										<span class="check-icon"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+									</li>
+									<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Outreached" data-color="yellow">
+										<div class="text-yellow-500 py-1 px-3 rounded-2xl bg-yellow-50">Outreached</div>
+										<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+									</li>
+									<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Negotiations" data-color="orange">
+										<div class="text-orange-500 py-1 px-3 rounded-2xl bg-orange-50">Negotiations</div>
+										<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+									</li>
+									<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Hired" data-color="green">
+										<div class="text-green-500 py-1 px-3 rounded-2xl bg-green-50">Hired</div>
+										<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+									</li>
+									<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Rejected" data-color="red">
+										<div class="text-red-500 py-1 px-3 rounded-2xl bg-red-50">Rejected</div>
+										<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</td>
+					
+					<!-- Edit Influencer Cost -->
+					<td class="min-w-[8.25rem] text-center">
+						<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-deliverables='[
+    {"label":"1 Instagram Image","cost":10000},
+    {"label":"1 Instagram Story","cost":5000}
+    ]'>
+							<span class="cost-value">₹15,000</span>
+							<img src="../../icons/PencilSimpleLine.svg" alt="Edit cost" class="edit-influencer-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+						</div>
+					</td>
+					
+					
+					<!-- Edit Client Cost -->
+					<td class="min-w-[8.25rem] text-center">
+						<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-name="Virat Kohli" data-cost="15000">
+							<span class="cost-value">₹15,000</span>
+							<img src="../../icons/PencilSimpleLine.svg" alt="Edit client cost" class="edit-client-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+						</div>
+					</td>
+					
+					
+					<td class="min-w-[8.25rem] text-center">155.0 M</td>
+					<td class="min-w-[8.25rem] text-center">14.2%</td>
+					<td class="min-w-[15.25rem] text-center">
+						<div class="flex items-center justify-center w-full space-x-2 ">
+							<img src="../../icons/instagram-icon.svg" alt="" class="" />
+							<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5 ">1x Story</span>
+							<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5">1x Reel</span>
+						</div>
+					</td>
+					<td class="min-w-[8.25rem] text-center">45.2k</td>
+					<td class="min-w-[8.25rem] text-center">50.6k</td>
+					<!-- Hover Actions -->
+					<td class="px-4 py-3 sticky right-0 z-10">
+						<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+							<button class="px-3 py-1 flex bg-black text-white rounded double-shadow space-x-1.5 min-w-24">
+								<img src="../../icons/Chat.svg" alt="" class="" />
+								<span>Message</span>
+							</button>
+						</div>
+					</td>
+				</tr>
+				
+				
+			</tbody>
+		</table>
+		<!-- <div class="flex grow justify-center items-center">
+<img loading="lazy" src="../../icons/emptyListTablesvg.svg" alt="">
+</div> -->
+	</div>
+</div>

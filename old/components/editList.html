@@ -1,0 +1,28 @@
+<div class="bg-white rounded-lg py-3 space-y-4 w-full max-w-md text-sm">
+	<div class="flex justify-between items-center border-b px-6 pb-3">
+		<h2 class="text-[#191919] text-base">Add New List</h2>
+		<img id="closeEditListModalButton" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+	</div>
+	<div class="space-y-5 px-6">
+		<div class="space-y-3">
+			<label class="text-[#474747]">List Name</label>
+			<input type="text" class="border rounded-md w-full py-1 px-3 placeholder:text-xs mt-1.5" placeholder="Enter list name" />
+		</div>
+		
+		<div class="space-y-3">
+			<label class="text-[#474747]">Choose platform</label>
+			<div class="flex items-center gap-2 mt-3">
+				<button type="button" class="bg-black platformIconsEdit px-2 py-1 text-white rounded-md flex items-center"><img src="../../icons/instagram-icon-white.svg" alt="" class="mr-2"> Instagram</button>
+				<button type="button" class="bg-white platformIconsEdit border px-2 py-1 text-[#474747] rounded-md flex items-center"><img src="../../icons/youtube.svg" alt="" class="mr-2"> YouTube</button>
+				<button type="button" class="bg-white platformIconsEdit border px-2 py-1 text-[#474747] rounded-md flex items-center"><img src="../../icons/tiktok.svg" alt="" class="mr-2"> TikTok</button>
+			</div>
+		</div>
+		
+		<div class="flex justify-end gap-2 border-t pt-3">
+			<button id="deleteEditListButton" class="border rounded-md px-3 py-1">Delete List</button>
+			<button id="editListButton" class="bg-black text-white rounded-md px-3 py-1">Update List</button>
+		</div>
+	</div>
+</div>
+
+<script src="/js/plan/list/editList.js"></script>

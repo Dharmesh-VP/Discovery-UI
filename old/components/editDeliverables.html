@@ -1,0 +1,46 @@
+<div class="bg-white rounded-md shadow-lg w-full max-w-[640px] relative text-sm">
+	<div class="flex justify-between items-center border-b px-6 py-3">
+		<div class="flex justify-between items-center w-full">
+			<h2 class=" text-base">Edit Deliverables</h2>
+			<img id="closeDeliverablesModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+		</div>
+	</div>
+	
+	<div class="px-6 py-4">
+		<p class="mb-1.5">Deliverables</p>
+		<div class=" text-[#656565] mb-4 flex items-start text-xs">
+			<img src="../../icons/Info.svg" alt="" class="w-4 h-4 mr-1">
+			<p class="leading-5">Setting deliverables for your plan allows you to reach out to influencers to obtain cost estimates and gain access to CPE and CPV metrics. Deliverables, Posts & Costs will be applied to all the profiles in the list.</p>
+		</div>
+		
+		<div class="flex items-center justify-between space-x-3 mb-3">
+			<select class="border rounded-md px-3 py-2  outline-none grow text-[#656565] hover:cursor-pointer">
+				<option selected disabled>Select Deliverable</option>
+				<option>Post</option>
+				<option>Story</option>
+				<option>Reel</option>
+			</select>
+			<div class="flex items-center justify-between grow border px-3 py-2 rounded-md">		
+				<span class="">1 Qty</span>
+				<div class="flex items-center space-x-3">
+                    <img src="../../icons/Minus.svg" alt="" class="hover:cursor-pointer">
+					<img src="../../icons/PlusBlack.svg" alt="" class="hover:cursor-pointer">
+				</div>
+			</div>
+			<input type="text" placeholder="Cost (Optional)" class="border rounded-md px-3 py-2 grow">
+			<button class="text-gray-400 hover:text-gray-600 w-fit">
+				<img src="../../icons/X.svg" class="w-4 h-4" alt="Remove">
+			</button>
+		</div>
+		<button class="border rounded-md px-3 py-1 text-xs flex items-center">
+			<img src="../../icons/PlusBlack.svg" alt="" class="hover:cursor-pointer mr-1.5"> Add More
+		</button>
+	</div>
+	<div class="flex justify-end items-center border-t px-6 py-3">
+		
+		<div class="flex justify-end space-x-2">
+			<button id="cancelDeliverablesModal" class="px-4 py-2 rounded-md border ">Cancel</button>
+			<button class="px-4 py-2 rounded-md bg-black text-white ">Update</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<table class="min-w-full text-left min-h-full">
+	<thead class="bg-gray-50 text-[#474747]">
+		<tr>
+			<!-- <td class="w-3 px-4 py-3"><input type="checkbox" class="w-fit" /></td> -->
+			<td class="px-4 py-3 flex items-center">Plan Name <img src="../icons/ArrowDown.svg" alt="" class="pl-2"></td>
+			<td class="px-4 py-3 text-center">Platform</td>
+			<td class="px-4 py-3 text-center">Total Influencers</td>
+			<td class="px-4 py-3 text-center">No. of Lists</td>
+			<td class="px-4 py-3 text-center">Created On</td>
+			<td class="px-4 py-3 text-center">Created By</td>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- Example Row -->
+		<tr class="group hover:bg-gray-50 transition-colors duration-200 relative">
+			<!-- Serial / Checkbox → Input -->
+			<!-- <td class="px-4 py-3">
+				<span class=" hidden group-hover:block">
+					<input type="checkbox" />
+				</span>
+				<input type="text" value="1" class="block w-3 group-hover:hidden text-center transition" />
+			</td> -->
+			<!-- Plan Info -->
+			<td class="px-4 py-3 flex items-center space-x-3">
+				<div class="rounded-full border w-8 h-8 flex justify-center items-center">T</div>
+				<div>
+					<p class="font-medium text-gray-900">Test Plan 2</p>
+					<p class="text-gray-500">Garnier</p>
+				</div>
+			</td>
+			<!-- Platform Icon -->
+			<td class="px-4 py-3 text-center">
+				<!-- <img src="../icons/instagram-icon.svg" alt="IG" class="w-6 h-6" /> -->
+				<div class="w-full flex justify-center items-center">
+					<img src="../icons/instagram-icon.svg" alt="IG" class="" />
+				</div>
+			</td>
+			<td class="px-4 py-3 text-center">3</td>
+			<td class="px-4 py-3 text-center">1</td>
+			<td class="px-4 py-3 text-center">07 Nov 2024</td>
+			<td class="px-4 py-3 text-center">Me</td>
+			<!-- Hover Actions -->
+			<td>
+				<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute right-2 bottom-5">
+					<button class="px-3 py-1 flex bg-white border discovery-border-gray rounded double-shadow items-center space-x-1.5">
+						<img src="../icons/BoxArrowDown.svg" alt="Archive" class="w-3" />
+						<span>Archive Plan</span>
+					</button>
+					<button onclick="location.href='/plan/list/list.html'" class="px-3 py-1 flex bg-black text-white double-shadow rounded items-center space-x-1.5">
+						<img src="../icons/Eye.svg" alt="View Plan" class="w-3" />
+						<span>View Plan</span>
+					</button>
+				</div>
+			</td>
+		</tr>
+		<!-- Repeat rows as needed… -->
+	</tbody>
+</table>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Plan List</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="flex overflow-hidden">
+	
+	
+	<!-- Sidebar -->
+	
+	<aside id="sideBar" class="min-w-[15.42rem] w-[16.8%] max-w-fit min-h-screen max-h-full bg-[#0B0B0B] text-[#e2e2e2] flex flex-col shrink">
+		
+		<div class="flex items-center justify-between p-6">
+			<img src="../../icons/vp-logo/vp-logo.png" srcset="
+          ../../icons/vp-logo/vp-logo.png   1x,
+          ../../icons/vp-logo/vp-logo@2x.png 2x,
+          ../../icons/vp-logo/vp-logo@3x.png 3x
+        " alt="Logo" class="w-auto h-auto" />
+			<img src="../../icons/bell.svg" alt="Notifications" class="w-4 h-4" />
+		</div>
+		
+		<!-- Nav -->
+		<ul class="flex-1 space-y-3 bg-transparent p-4">
+			<!-- Dashboard -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+				<img src="../../icons/dashboard.svg" data-default="../../icons/dashboard.svg" data-active="../../icons/dashboard_clicked.svg" alt="Dashboard" class="w-5  h-5" />
+				<span class="">Dashboard</span>
+			</li>
+			<div class="h-[0.5px] w-full bg-[#474747] self-stretch flex-grow-0"></div>
+			<!-- Discover Influencer -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+				<img src="../../icons/discover.svg" data-default="../../icons/discover.svg" data-active="../../icons/discover_clicked.svg" alt="Discover Influencer" class="w-5 h-5" />
+				<span class="">Discover Influencer</span>
+			</li>
+			
+			<!-- Plans -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+				<img src="../../icons/plans.svg" data-default="../../icons/plans.svg" data-active="../../icons/plans_clicked.svg" alt="Plans" class="w-5 h-5" />
+				<span class="">Plans</span>
+			</li>
+			
+			<!-- Reports -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+				<img src="../../icons/reports.svg" data-default="../../icons/reports.svg" data-active="../../icons/reports_clicked.svg" alt="Reports" class="w-5 h-5" />
+				<span class="">Reports</span>
+			</li>
+			
+			<!-- Competitive Analysis -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5 ">
+				<img src="../../icons/competitive.svg" data-default="../../icons/competitive.svg" data-active="../../icons/competitive_clicked.svg" alt="Competitive Analysis" class="w-5 h-5" />
+				<span class="">Competitive Analysis</span>
+			</li>
+			
+			<div class="h-[0.5px] w-full bg-[#474747] self-stretch flex-grow-0"></div>
+			
+			<!-- Eng. Rate Calculator -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5">
+				<img src="../../icons/calculator.svg" data-default="../../icons/calculator.svg" data-active="../../icons/calculator_clicked.svg" alt="Eng. Rate Calculator" class="w-5 h-5" />
+				<span class="">Eng. Rate Calculator</span>
+			</li>
+			
+			<!-- Lookalikes -->
+			<li class="nav-item flex items-center space-x-3 rounded-lg p-2 cursor-pointer transition-colors duration-200 hover:bg-white/5">
+				<img src="../../icons/lookalikes.svg" data-default="../../icons/lookalikes.svg" data-active="../../icons/lookalikes_clicked.svg" alt="Lookalikes" class="w-5 h-5" />
+				<span class="">Lookalikes</span>
+			</li>
+		</ul>
+	</aside>
+	
+	
+	<!-- Main -->
+	
+	<main class="flex flex-col justify-start grow overflow-auto h-full">
+		
+		
+		<!-- Header -->
+		
+		<header id="header" class="flex items-center justify-between bg-white py-4 px-6 border-b min-h-[4.64rem] text-[#191919] shrink">
+			<!-- Left side: Logo + Title -->
+			<div class="flex items-center space-x-3">
+				<img src="../../icons/ArrowLeft.svg" alt="" class="mr-1 w-4 hover:cursor-pointer" onclick="history.back()">
+				<img src="../../icons/Avator.png" alt="Nivea" class="w-10 h-10 rounded-full">
+				<div>
+					<h1 class="font-semibold ">Test Plan 1</h1>
+					<p class="text-gray-500 text-xs">Nivea | 07 Mar 2025</p>
+				</div>
+			</div>
+			
+			<!-- Right side: Buttons -->
+			<div class="relative flex items-center gap-2">
+				
+				<!-- Add Influencer -->
+				<div class="relative">
+					<button id="btnAdd" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-black text-white rounded">
+						<img src="../../icons/Plus.svg" alt="" class="" />
+						<span class=" leading-none translate-y-[1px] text-sm">Add Influencer</span>
+					</button>
+					
+					<!-- Add dropdown -->
+					<div id="ddAdd" class="hidden absolute top-full mt-2 right-0 w-48 bg-white border rounded shadow-lg  z-50">
+						<ul class="p-1 text-[#474747] ">
+							<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"> <img src="../../icons/search.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Discovery</span></li>
+							<li class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/Star.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add from Favorites</span></li>
+							<li id="openManualBtn" class="flex items-center px-2 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/UploadSimple.svg" class="mr-1.5 w-4" alt=""><span class="leading-none pt-0.5">Add Manually</span></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Share File -->
+				<div class="relative">
+					<button id="btnShare" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-white border rounded hover:bg-gray-50">
+						<img src="../../icons/Share.svg" alt="" class="">
+						<span class=" leading-none translate-y-[1px] text-sm">Share File</span>
+					</button>
+					<!-- Share dropdown -->
+					<div id="ddShare" class="w-[480px] min-w-fit hidden absolute top-full mt-2 right-0 bg-white border rounded-lg shadow-lg z-50 text-[#191919] py-3 space-y-4" onclick="event.stopPropagation()">
+						<div class="flex justify-between items-center border-b px-6 pb-3">
+							<h2 class="">Share This File</h2>
+							<div class="flex justify-around items-center ">
+								<img src="../../icons/LinkSimple.svg" alt="" class="h-4 w-4" />
+								<button id="copyLink" class="text-blue-600 text-sm ml-2">Copy link</button>
+								<img src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" onclick="closeShare(event)" />
+							</div>
+						</div>
+						<div class="px-6 space-y-4 overflow-auto">
+							<div class="flex justify-between items-center">
+								<div class="flex space-x-2 border rounded px-3 py-1 grow">
+									<input type="email" placeholder="Invite others by name@email.com" class="grow outline-none">
+									<select class="rounded px-2 py-1 border-0 shrink text-sm text-[#474747] outline-none">
+										<option>can view</option>
+										<option>can edit</option>
+									</select>
+								</div>
+								<button class="px-3 pb-2 pt-2.5 ml-2 bg-[#838383] text-white rounded-md disabled:opacity-20 shrink" disabled>Invite</button>
+							</div>
+							<div>
+								<p class="text-[#656565] mb-3 ">Who has Access</p>
+								<ul class="mt-2 space-y-2 max-h-14 overflow-auto">
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">John Doe</span>
+										</div>
+										
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can view</span></div>
+										
+									</li>
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">Amit Kumar</span>
+										</div>
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can edit</span></div>
+										
+									</li>
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">Amit Kumar</span>
+										</div>
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can edit</span></div>
+										
+									</li>
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">Amit Kumar</span>
+										</div>
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can edit</span></div>
+										
+									</li>
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">Amit Kumar</span>
+										</div>
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can edit</span></div>
+										
+									</li>
+									<li class="flex items-center justify-between ">
+										<div class="flex items-center space-x-2">
+											<img src="../../icons/Avator.png" class="w-6 h-6 rounded-full">
+											<span class="flex-1">Amit Kumar</span>
+										</div>
+										<div class="text-left w-20"><span class="text-[#474747] text-sm">can edit</span></div>
+										
+									</li>
+								</ul>
+							</div>
+							<!-- ✅ Style for 'Select lists to be shared' -->
+							<div>
+								<p class="text-[#656565] mb-3 ">Select lists to be shared</p>
+								<div id="listCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 overflow-auto">
+									<!-- Dynamic checkboxes go here -->
+								</div>
+								
+							</div>
+							
+							<!-- ✅ Style for 'Select columns to be shared' -->
+							<div class="mt-6">
+								<p class="text-[#656565] mb-3 ">Select columns to be shared</p>
+								<div id="columnCheckboxes" class="grid grid-cols-2 gap-2 mt-2 max-h-32 overflow-auto">
+									<!-- Dynamic checkboxes go here -->
+								</div>
+							</div>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				
+				<!-- More -->
+				<div class="relative">
+					<button id="btnMore" class="h-[30px] flex items-center gap-1.5 py-1 px-3 bg-white border rounded hover:bg-gray-50">
+						<span class=" leading-none translate-y-[-3px] text-sm">...</span>
+					</button>
+					
+					<!-- More dropdown -->
+					<div id="ddMore" class="hidden absolute top-full mt-2 right-0 w-40 bg-white border rounded shadow-lg z-50">
+						<ul class="p-1">
+							<li id="editPlan" class="flex items-center px-4 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/PencilSimpleLine.svg" alt="" class="w-4 mr-2"> Edit Plan</li>
+							<li class="flex items-center px-4 py-2 hover:bg-gray-100 rounded hover:cursor-pointer"><img src="../../icons/BoxArrowDown.svg" alt="" class="mr-2"> Archive Plan</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!-- Edit Details Modal -->
+			<div id="editPlanModal" class="fixed z-50 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200 ">
+				<div class="bg-white rounded-xl w-full max-w-md  text-[#191919] relative">
+					<div class="flex justify-between items-center border-b px-6 py-3">
+						<div class="flex justify-between items-center w-full">
+							<h2 class=" text-base">Edit Plan</h2>
+							<img id="closeEditPlanModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+						</div>
+					</div>
+					<div class="space-y-3 p-6">
+						<div class="">
+							<label class="text-[#474747]">Name of the Plan</label>
+							<input type="text" placeholder="Test Plan" class="w-full border rounded px-3 py-1 outline-none mt-2 placeholder:text-[#191919]">
+						</div>
+						<div id="brandDropdownWrapper" class="relative">
+							<label class="text-[#474747]">Brand Name</label>
+							<div class="mt-2">
+								<button id="brandDropdownToggle" class="border px-3 py-1 rounded w-full text-left">Select brand</button>
+								<div id="brandDropdownMenu" class="absolute bg-white border hidden z-10 w-full">
+									<input type="text" id="brandSearchInput" class="w-full px-3 py-1 border-b outline-non" placeholder="Search brand...">
+									<ul class="max-h-[200px] overflow-auto">
+										<li class="brand-option flex justify-between px-3 py-2 hover:bg-gray-100 cursor-pointer" data-value="Nivea">
+											Nivea <span class="check-icon hidden"><img src="../../icons/Check.svg" class="w-4" /></span>
+										</li>
+										<!-- more .brand-option -->
+									</ul>
+									<div id="addNewBrandOption" class="hidden px-3 py-2 bg-gray-50 text-red-500 cursor-pointer">
+										+ Add "<span id="newBrandText"></span>"
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="my-3 px-6 text-right">
+						<button class="px-4 py-1 bg-black text-white rounded">Save Changes</button>
+					</div>
+				</div>
+			</div>
+			
+			
+		</header>
+		
+		
+		<!-- Table Div-->
+		
+		<div class="p-6 grow">
+			<div class="border rounded-md h-full ">
+				
+				
+				<!-- First Line -->
+				
+				<div id="firstLine" class="flex items-center justify-between border-b px-4 py-3 text-sm">
+					<div class="space-x-3 flex items-center">
+						<div class="relative inline-block text-left">
+							<!-- List Names Button -->
+							<button id="listNameDropdownButton" type="button" class="h-[30px] w-[178px] bg-[#FAFAFA] rounded-md border py-2 px-3 flex justify-between items-center">
+								<div class="flex items-center">
+									<img src="../../icons/instagram-icon.svg" alt="" class="w-3 mr-2">
+									<span class="leading-none translate-y-[1px]">Nivea List 1 (4)</span>
+								</div>
+								<img src="../../icons/CaretUpDown.svg" alt="" class="w-3">
+							</button>
+							
+							<!-- listNameDropdown Menu -->
+							<div id="listNameDropdownMenu" class=" hidden absolute mt-2 w-[178px] bg-white border rounded-md shadow-lg z-50">
+								<div class="p-2">
+									<span class="w-full px-2 py-1  border rounded mb-2 flex items-center">
+										<img src="../../icons/search.svg" alt="" class="mr-2">
+										<input type="text" placeholder="Search List" class=" focus:outline-none" />
+									</span>
+									
+									<ul class="space-y-1  max-h-40 overflow-auto">
+										<li class="flex items-center justify-between p-2 hover:bg-[#F8F8F8] rounded cursor-pointer">
+											<span>Nivea List 1 (4)</span>
+											<img src="../../icons/instagram-icon.svg" class="w-3" alt="">
+										</li>
+										<li class="flex items-center justify-between p-2 hover:bg-[#F8F8F8] rounded cursor-pointer">
+											<span>Nivea List 2 (6)</span>
+											<img src="../../icons/instagram-icon.svg" class="w-3" alt="">
+										</li>
+										<li class="flex items-center justify-between p-2 hover:bg-[#F8F8F8] rounded cursor-pointer">
+											<span>Nivea List 3 (6)</span>
+											<img src="../../icons/instagram-icon.svg" class="w-3" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<button id="editDeliverablesButton" type="button" class=" flex justify-between items-center">
+							<img src="../../icons/PencilSimpleLine.svg" alt="" class="w-3 mr-2">
+							<span class="leading-none translate-y-[1px] text-[#656565]">Edit Deliverables</span>
+						</button>
+						
+						<div class="relative">
+							<!-- 3 Dots Button -->
+							<button id="btnMoreList" class="h-[30px] flex items-center justify-center py-1 px-3">
+								<span class=" leading-none ">⋯</span>
+							</button>
+							
+							<!-- Dropdown Menu -->
+							<div id="ddMoreList" class=" hidden absolute top-full mt-2 left-0 w-36 bg-white border rounded shadow-lg z-50">
+								<ul class="p-1 ">
+									<li id="editList" class="flex items-center px-2 text-[#474747] py-2  hover:bg-gray-100 rounded cursor-pointer">
+										<img src="../../icons/PencilSimpleLine.svg" alt="Edit" class="w-4 mr-1.5"><span class="leading-none">Edit List</span>
+									</li>
+									<li id="deleteList" class="flex items-center px-2 text-[#474747] py-2  hover:bg-gray-100 rounded cursor-pointer">
+										<img src="../../icons/TrashSimpleLight.svg" alt="Delete" class="w-4 mr-1.5"><span class="leading-none">Delete List</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div id="messageBtnDiv" class="relative hidden">
+							<!-- Button with text and dropdown arrow -->
+							<div class="flex" style="box-shadow: 0px 4px 6px -2px #10182808; box-shadow: 0px 12px 16px -4px #10182814;">
+								<button id="messageBtn" class="bg-[#FCE9E9] text-gray-700 border-[] rounded-l-md px-3 py-1 flex items-center " style="border-style: solid; border-color: #E02424; border-width: 1px 0px 1px 1px;">
+									<img src="../../icons/ChatBlack.svg" alt="" class="h-3 w-3 mr-1.5" />
+									Message
+								</button>
+								<button id="messageDropdownBtn" class="bg-white border-l-0 border-[#E02424] rounded-r-md px-2 py-1" style="border: 1px solid #E02424;">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+									</svg>
+								</button>
+							</div>
+							
+							<!-- Dropdown menu -->
+							<div id="messageDropdownMenu" class=" absolute left-3/4 mt-1 bg-white border border-gray-200 rounded-md shadow-md w-48 hidden z-40">
+								<!-- Main Menu -->
+								<ul id="mainMenu" class="p-1">
+									<li onclick="openSubMenu('listMenu')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">Move to List</li>
+									<li onclick="openSubMenu('planMenu')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">Copy to Plan</li>
+									<li class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">Unlock Contact</li>
+									<li class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">Unlock Report</li>
+									<li class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">Remove Influencer</li>
+								</ul>
+								
+								<!-- Move to List Submenu -->
+								<div id="listMenu" class="p-2 hidden space-y-2.5">
+									<div class="flex items-center">
+										<img onclick="goBack()" class="mr-1.5 hover:cursor-pointer" src="../../icons/ArrowLeft.svg" alt="">
+										<span class="text-[#656565] align-text-bottom">Move To List</span>
+									</div>
+									<div class=" text-[#656565] mb-1">All Lists</div>
+									<ul class="text-[#191919]">
+										<li class="py-1 cursor-pointer">Nivea List 1</li>
+										<li class="py-1 cursor-pointer">Nivea List 2</li>
+										<li class="py-1 cursor-pointer">Nivea List 3</li>
+									</ul>
+								</div>
+								
+								<!-- Copy to Plan Submenu -->
+								<div id="planMenu" class="p-2 hidden space-y-2.5">
+									<div class="flex items-center">
+										<img onclick="goBack()" class="mr-1.5 hover:cursor-pointer" src="../../icons/ArrowLeft.svg" alt="">
+										<span class="text-[#656565]">Copy To Plan</span>
+									</div>
+									<div class="text-sm text-[#656565] mb-1">All Plans</div>
+									<ul class="text-[#191919]">
+										<li class="py-1 cursor-pointer">Nivea Campaign</li>
+										<li class="py-1 cursor-pointer">Minimalist SunScreen</li>
+										<li class="py-1 cursor-pointer">Garnier Facewash</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex items-center  space-x-1.5">
+						<button id="openAddList" class="border py-2 px-3 rounded-md flex items-center" type="button"><img src="../../icons/PlusBlack.svg" alt="" class="mr-1"> <span class="leading-none text-sm">Add List</span></button>
+						<button id="openManageColumn" class="border py-2 px-3 rounded-md" type="button"><img src="../../icons/GearSix.svg" alt=""></button>
+						<button class="border py-2 px-3 rounded-md" type="button"><img src="../../icons/FileCsv.svg" alt=""></button>
+					</div>
+				</div>
+				
+				
+				<!-- Second Line -->
+				
+				<div id="secondLine" class="flex items-center border-b text-sm">
+					<button class="tab-button active whitespace-nowrap px-3.5 py-3 font-medium text-[#191919]" data-tab="all">
+						All <span class="font-medium">5</span>
+					</button>
+					<button class="tab-button whitespace-nowrap px-3.5 py-3 border-transparent font-medium text-[#656565]" data-tab="prospects">
+						Prospects <span class="font-medium">1</span>
+					</button>
+					<button class="tab-button whitespace-nowrap px-3.5 py-3 border-transparent font-medium text-[#656565]" data-tab="outreached">
+						Outreached <span class="font-medium">1</span>
+					</button>
+					<button class="tab-button whitespace-nowrap px-3.5 py-3 border-transparent font-medium text-[#656565]" data-tab="negotiations">
+						Negotiations <span class="font-medium">1</span>
+					</button>
+					<button class="tab-button whitespace-nowrap px-3.5 py-3 border-transparent font-medium text-[#656565]" data-tab="hired">
+						Hired <span class="font-medium">1</span>
+					</button>
+					<button class="tab-button whitespace-nowrap px-3.5 py-3 border-transparent font-medium text-[#656565]" data-tab="rejected">
+						Rejected <span class="font-medium">1</span>
+					</button>
+					
+					<div id="statusDropdownWrapper" class="relative inline-block">
+						<button id="statusDropdownToggle" class="whitespace-nowrap px-5 pb-3 text-base">
+							&hellip;
+						</button>
+						<div id="statusDropdownMenu" class="status-dropdown hidden absolute left-0 top-full mt-1 w-48 bg-white rounded-lg border shadow-lg z-40">
+							<div class="p-2">
+								<input type="text" id="statusSearchInput" placeholder="Search/Create Status" class="w-full p-2 border rounded-md focus:outline-none " />
+							</div>
+							<!-- Inside your dropdown, after <ul> -->
+							<div id="addNewStatusOption" class="px-3 py-2 hover:bg-gray-50 cursor-pointer text-red-500 hidden">
+								+ Add <span id="newStatusText"></span>
+							</div>
+							
+							<ul class="py-1 max-h-60 overflow-y-auto">
+								<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Prospects" data-status="Prospects" data-color="blue">
+									<div class="flex items-center">
+										<span class="relative w-3 h-3 rounded-full border-2 border-blue-500 mr-2 flex items-center justify-center">
+											<span class="w-1 h-1 rounded-full border-2 border-blue-500"></span>
+										</span>
+										<span>Prospects</span>
+									</div>
+									<span class="check-icon"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+								</li>
+								
+								<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Outreached" data-status="Outreached" data-color="yellow">
+									<div class="flex items-center">
+										<span class="relative w-3 h-3 rounded-full border-2 border-yellow-500 mr-2 flex items-center justify-center">
+											<span class="w-1 h-1 rounded-full border-2 border-yellow-500"></span>
+										</span>
+										<span>Outreached</span>
+									</div>
+									<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+								</li>
+								
+								<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="orange" data-color="orange">
+									<div class="flex items-center">
+										<span class="relative w-3 h-3 rounded-full border-2 border-orange-500 mr-2 flex items-center justify-center">
+											<span class="w-1 h-1 rounded-full border-2 border-orange-500"></span>
+										</span>
+										<span>Negotiations</span>
+									</div>
+									<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+								</li>
+								
+								<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Hired" data-status="Hired" data-color="green">
+									<div class="flex items-center">
+										<span class="relative w-3 h-3 rounded-full border-2 border-green-500 mr-2 flex items-center justify-center">
+											<span class="w-1 h-1 rounded-full border-2 border-green-500"></span>
+										</span>
+										<span>Hired</span>
+									</div>
+									<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+								</li>
+								
+								<li class="status-option flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="Rejected" data-status="Rejected" data-color="red">
+									<div class="flex items-center">
+										<span class="relative w-3 h-3 rounded-full border-2 border-red-500 mr-2 flex items-center justify-center">
+											<span class="w-1 h-1 rounded-full border-2 border-red-500"></span>
+										</span>
+										<span>Rejected</span>
+									</div>
+									<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				<!-- Table -->
+				
+				<div id="table" class="overflow-auto scroll-smooth min-h-full">
+					<div class="h-[68vh] w-full overflow-x-auto ios-scroll flex flex-col">
+						<table class="w-full min-w-[64rem] text-left relative table-auto text-sm">
+							<thead class=" text-[#474747] space-x-5 bg-gray-50 sticky top-0 z-30 ">
+								<tr class="border-b  bg-gray-50 relative">
+									<td class="py-2 px-4 lg:min-w-[12rem] xl:min-w-[13rem] 2xl:min-w-[14rem] sticky left-0 z-30 bg-gray-50">
+										<div class="flex items-center space-x-2">
+											<input id="selectAll" type="checkbox" class="w-3 h-3" />
+											<span class="pt-0.5">Influencer Profile</span>
+											<img src="../../icons/ArrowDown.svg" alt="Arrow Down" class="w-3 h-3" />
+										</div>
+									</td>
+									<td class=" min-w-[8.25rem] text-center">Location</td>
+									<td class=" min-w-[8.25rem] text-center pr-5">Status</td>
+									<td class=" min-w-[8.25rem] text-center">Influencer Cost</td>
+									<td class=" min-w-[8.25rem] text-center">Client Cost</td>
+									<td class=" min-w-[8.25rem] text-center">Followers</td>
+									<td class=" min-w-[8.25rem] text-center"><span class="flex justify-center items-center">ER <img src="../../icons/Info.svg" alt="" class="w-3 ml-1" /></span></td>
+									<td class=" min-w-[15.25rem] text-center">Deliverables</td>
+									<td class="min-w-[8.25rem] text-center whitespace-nowrap">Avg Views</td>
+									<td class="min-w-[8.25rem] text-center whitespace-nowrap">Avg Likes</td>
+									<td class="min-w-[8.25rem] text-center whitespace-nowrap">Message</td>
+								</tr>
+							</thead>
+							<tbody class="bg-white space-x-5">
+								<tr class="group hover:bg-gray-50 relative border-b">
+									<!-- Serial / Checkbox → Input -->
+									<td class="lg:min-w-[12rem] xl:min-w-[13rem] 2xl:min-w-[14rem] sticky left-0 z-20 bg-white group-hover:bg-gray-50">
+										<div class="pl-4 py-3 flex justify-between items-center">
+											<div class="flex items-center space-x-1.5 ">
+												<div class="relative flex flex-col items-center w-3 group ">
+													<p class="flex-1/2 w-full duration-100 group-hover:hidden text-center text-black">1</p>
+													<input type="checkbox" class="flex-1/2 w-full hidden duration-100 group-hover:block" />
+												</div>
+												<div class="rounded-full w-8 h-8 flex justify-center items-center">
+													<img src="../../icons/viratKohli.png" alt="">
+												</div>
+												<p class="font-medium text-gray-900 text-base">Virat Kohli</p>
+											</div>
+											
+											<!-- TRIGGER ICON -->
+											<img src="../../icons/AddressBook.svg" alt="Open Contact" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:cursor-pointer" data-name="Virat Kohli" data-emails='["virat@gmail.com", "virat23@gmail.com"]' data-phones='["+91 9999999999"]' onclick="openContactModal(this)" />
+										</div>
+									</td>
+									
+									<!-- Platform Icon -->
+									<td class="min-w-[8.25rem] text-center">
+										Mumbai
+									</td>
+									
+									<!-- Status -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="status-cell relative flex justify-center items-center group">
+											<div class="status-display rounded-2xl bg-blue-50 text-blue-500 py-1 px-3 flex items-center">
+												<span>Prospects</span>
+											</div>
+											<!-- toggle caret (hidden until hover) -->
+											<img src="../../icons/CaretDown.svg" alt="Toggle status menu" class="status-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+											
+											<!-- Status Dropdown Menu -->
+											<div class="status-dropdown hidden absolute left-0 top-full mt-1 w-36 bg-white rounded-lg border shadow-lg z-10">
+												<ul class="py-1">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Prospects" data-color="blue">
+														<div class="text-blue-500 py-1 px-3 rounded-2xl bg-blue-50">Prospects</div>
+														<span class="check-icon"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Outreached" data-color="yellow">
+														<div class="text-yellow-500 py-1 px-3 rounded-2xl bg-yellow-50">Outreached</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Negotiations" data-color="orange">
+														<div class="text-orange-500 py-1 px-3 rounded-2xl bg-orange-50">Negotiations</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Hired" data-color="green">
+														<div class="text-green-500 py-1 px-3 rounded-2xl bg-green-50">Hired</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Rejected" data-color="red">
+														<div class="text-red-500 py-1 px-3 rounded-2xl bg-red-50">Rejected</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									
+									<!-- Edit Influencer Cost -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-deliverables='[
+					{"label":"1 Instagram Image","cost":10000},
+					{"label":"1 Instagram Story","cost":5000}
+					]'>
+											<span class="cost-value">₹15,000</span>
+											<img src="../../icons/PencilSimpleLine.svg" alt="Edit cost" class="edit-influencer-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+										</div>
+									</td>
+									
+									
+									<!-- Edit Client Cost -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-name="Virat Kohli" data-cost="15000">
+											<span class="cost-value">₹15,000</span>
+											<img src="../../icons/PencilSimpleLine.svg" alt="Edit client cost" class="edit-client-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+										</div>
+									</td>
+									
+									
+									<td class="min-w-[8.25rem] text-center">155.0 M</td>
+									<td class="min-w-[8.25rem] text-center">14.2%</td>
+									<td class="min-w-[15.25rem] text-center">
+										<div class="flex items-center justify-center w-full space-x-2 ">
+											<img src="../../icons/instagram-icon.svg" alt="" class="" />
+											<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5 ">1x Story</span>
+											<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5">1x Reel</span>
+										</div>
+									</td>
+									<td class="min-w-[8.25rem] text-center">45.2k</td>
+									<td class="min-w-[8.25rem] text-center">50.6k</td>
+									<!-- Hover Actions -->
+									<td class="px-4 py-3 sticky right-0 z-10">
+										<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+											<button class="px-3 py-1 flex bg-black text-white rounded double-shadow space-x-1.5 min-w-24">
+												<img src="../../icons/Chat.svg" alt="" class="" />
+												<span>Message</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr class="group hover:bg-gray-50 relative border-b">
+									<!-- Serial / Checkbox → Input -->
+									<td class="min-w-[14rem] sticky left-0 z-20 bg-white group-hover:bg-gray-50 border-t">
+										<div class="pl-4 py-3 flex justify-between items-center">
+											<div class="flex items-center space-x-1.5 ">
+												<div class="relative flex flex-col items-center w-3 group ">
+													<p class="flex-1/2 w-full duration-100 group-hover:hidden text-center text-black">2</p>
+													<input type="checkbox" class="flex-1/2 w-full hidden duration-100 group-hover:block" />
+												</div>
+												<div class="rounded-full w-8 h-8 flex justify-center items-center">
+													<img src="../../icons/instagram-icon.svg" alt="">
+												</div>
+												<p class="font-medium text-gray-900 text-base">Sonakshi Kohli</p>
+											</div>
+											
+											<!-- TRIGGER ICON -->
+											<img src="../../icons/AddressBook.svg" alt="Open Contact" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:cursor-pointer" data-name="Sonakshi Kohli" data-emails='["Sonakshi@gmail.com", "sonakshi23@gmail.com"]' data-phones='["+91 9123654789"]' onclick="openContactModal(this)" />
+										</div>
+									</td>
+									
+									<!-- Platform Icon -->
+									<td class="min-w-[8.25rem] text-center">
+										Mumbai
+									</td>
+									
+									<!-- Status -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="status-cell relative flex justify-center items-center group">
+											<div class="status-display rounded-2xl bg-blue-50 text-blue-500 py-1 px-3 flex items-center">
+												<span>Prospects</span>
+											</div>
+											<!-- toggle caret (hidden until hover) -->
+											<img src="../../icons/CaretDown.svg" alt="Toggle status menu" class="status-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+											
+											<!-- Status Dropdown Menu -->
+											<div class="status-dropdown hidden absolute left-0 top-full mt-1 w-36 bg-white rounded-lg border shadow-lg z-10">
+												<ul class="py-1">
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Prospects" data-color="blue">
+														<div class="text-blue-500 py-1 px-3 rounded-2xl bg-blue-50">Prospects</div>
+														<span class="check-icon"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Outreached" data-color="yellow">
+														<div class="text-yellow-500 py-1 px-3 rounded-2xl bg-yellow-50">Outreached</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Negotiations" data-color="orange">
+														<div class="text-orange-500 py-1 px-3 rounded-2xl bg-orange-50">Negotiations</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Hired" data-color="green">
+														<div class="text-green-500 py-1 px-3 rounded-2xl bg-green-50">Hired</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+													<li class="status-option px-3 py-2 hover:bg-gray-50 flex justify-between cursor-pointer" data-status="Rejected" data-color="red">
+														<div class="text-red-500 py-1 px-3 rounded-2xl bg-red-50">Rejected</div>
+														<span class="check-icon hidden"><img src="../../icons/Check.svg" alt="Selected" class="w-4 h-4" /></span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									
+									<!-- Edit Influencer Cost -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-deliverables='[
+								{"label":"1 Instagram Image","cost":0},
+								{"label":"1 Instagram Story","cost":0}
+								]'>
+											<span class="cost-value">₹0</span>
+											<img src="../../icons/PencilSimpleLine.svg" alt="Edit cost" class="edit-influencer-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+										</div>
+									</td>
+									
+									
+									<!-- Edit Client Cost -->
+									<td class="min-w-[8.25rem] text-center">
+										<div class="edit-cost relative flex justify-center items-center group text-[#191919]" data-name="Sonakshi Kohli" data-cost="0">
+											<span class="cost-value">₹0</span>
+											<img src="../../icons/PencilSimpleLine.svg" alt="Edit client cost" class="edit-client-cost-toggle ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+										</div>
+									</td>
+									
+									
+									<td class="min-w-[8.25rem] text-center">155.0 M</td>
+									<td class="min-w-[8.25rem] text-center">14.2%</td>
+									<td class="min-w-[8.25rem] text-center">
+										
+										-
+										<!-- <div class="flex items-center w-full min-w-[168px] space-x-2">
+								<img src="../../icons/instagram-icon.svg" alt="" class="" />
+								<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5 ">1x Story</span>
+								<span class="bg-[#F7F7F7] rounded-2xl px-2 py-0.5">1x Reel</span>
+								</div> -->
+									</td>
+									<td class="min-w-[8.25rem] text-center">45.2k</td>
+									<td class="min-w-[8.25rem] text-center">50.6k</td>
+									<!-- Hover Actions -->
+									<td class="px-4 py-3 sticky right-0 z-10">
+										<div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+											<button class="px-3 py-1 flex bg-black text-white rounded double-shadow space-x-1.5 min-w-24">
+												<img src="../../icons/Chat.svg" alt="" class="" />
+												<span>Message</span>
+											</button>
+										</div>
+									</td>								
+								</tr>
+							</tbody>
+						</table>
+						<!-- <div class="flex grow justify-center items-center">
+				<img loading="lazy" src="../../icons/emptyListTablesvg.svg" alt="">
+				</div> -->
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</main>
+	
+	
+	
+	<!-- Modals -->
+	
+	
+	<div id="manualOverlay" class="fixed inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200 z-60">
+		<div id="manualPanel" class="fixed flex flex-col inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 overflow-auto px-4 py-2 space-y-6 ">
+			
+			<div class="flex justify-between items-center mb-5">
+				<h2 class="text-lg text-[#191919]">Add Influencers</h2>
+				<button id="closeManual" class="text-gray-500  hover:text-gray-800">✕</button>
+			</div>
+			
+			<div class="space-y-1.5">
+				<div class="text-[#474747]">Choose a List</div>
+				<button class="select-btn" style="padding-top: 8px; padding-bottom: 6px; border-radius: 4px;">
+					<span class="text-sm">Choose / Create a List</span>
+					<svg xmlns="http://www.w3.org/2000/svg" style="height: .75rem; width: .75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+				</button>
+			</div>
+			
+			<!-- Choose Platform -->
+			<div class="space-y-1.5">
+				<div class=" text-[#474747]">Choose Platform</div>
+				<div class="platform-buttons flex items-center space-x-2 text-sm">
+					<button type="button" class="active flex text-[#191919] items-center bg-[#FCE9E9] rounded px-2 grow py-1.5" style="border: 1px solid #E02424;">
+						<img src="../../icons/instagram-icon.svg" alt="IG" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">Instagram</span>
+					</button>
+					<button type="button" class="flex text-[#656565] items-center border rounded px-2 grow py-1.5">
+						<img src="../../icons/youtube.svg" alt="" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">YouTube</span>
+					</button>
+					<button type="button" class="flex text-[#656565] items-center border rounded px-2 grow py-1.5">
+						<img src="../../icons/tiktok.svg" alt="" class="h-4 w-4 mr-1.5" /><span class="pt-0.5">TikTok</span>
+					</button>
+				</div>
+			</div>
+			
+			<!-- Add Influencers Textarea -->
+			<div class="mb-4">
+				<div class="text-[#474747] mb-1">Add Influencers</div>
+				<textarea rows="4" placeholder="Enter Instagram profiles in any of these formats (separate with commas).
+		&bull; Full Link: ‘https://www.instagram.com/thetatvaindia/’
+		&bull; Handle: ‘thetatvaindia’ or ‘@thetatvaindia’
+				" class="w-full border border-gray-300 rounded-md px-3 py-2 resize-none placeholder:text-sm text-gray-500 focus:ring-indigo-400 focus:outline-none min-h-[8rem] placeholder:leading-[22px]"></textarea>
+				<p class="mt-1 text-sm text-gray-400">
+					
+				</p>
+			</div>
+			
+			<div class="flex items-center justify-center text-gray-400">
+				<span class="border-t border-gray-200 flex-grow mr-3"></span>
+				<span class="text-sm">OR</span>
+				<span class="border-t border-gray-200 flex-grow ml-3"></span>
+			</div>
+			
+			<!-- CSV Buttons -->
+			<div class="flex space-x-3 mb-4 text-sm">
+				<button id="addInfluencerDownloadBtn" class="flex-1 flex items-center justify-center border border-gray-300 rounded-md px-3 py-1.5 hover:bg-gray-50 transition">
+					<img src="../../icons/DownloadSimple.svg" alt="" class="h-4 w-4 mr-2" />
+					<span class="pt-0.5">Download Sample CSV</span>
+				</button>
+				<button id="addInfluencerUploadBtn" class="flex-1 flex items-center justify-center bg-black text-white rounded-md px-3 py-1.5 hover:bg-gray-800 transition">
+					<img src="../../icons/UploadSimple-white.svg" alt="" class="h-4 w-4 mr-2" />
+					<span class="pt-0.5">Upload CSV</span>
+				</button>
+				<input type="file" id="addInfluencerFileInput" accept=".csv" class="hidden" />
+			</div>
+			
+			<!-- File Preview and Loader -->
+			<div id="addInfluencerFileStatus" class="hidden border rounded-md p-4 space-y-2">
+				<div class="flex justify-between items-center">
+					<div class="flex items-center space-x-2">
+						<img src="../../icons/FileCsv.svg" alt="CSV" class="h-5 w-5" />
+						<div>
+							<p id="addInfluencerFileName" class="font-medium ">File name</p>
+							<p id="addInfluencerFileSize" class="text-sm text-gray-500">Size</p>
+						</div>
+					</div>
+					<button id="addInfluencerCloseFileStatus" class="text-gray-400 hover:text-gray-600 ">✕</button>
+				</div>
+				<div class="flex items-center space-x-2">
+					<div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+						<div id="addInfluencerProgressBar" class="bg-black h-2 w-0 transition-all duration-300"></div>
+					</div>
+					<span id="addInfluencerProgressPercent" class="text-sm text-gray-500">0%</span>
+				</div>
+			</div>
+			
+			
+			<div class="flex grow items-end">
+				<div class="flex justify-between items-center gap-[0.5rem] w-full">
+					<button type="button" class="grow h-[2.125rem]  rounded-[0.25rem] border">Cancel</button>
+					<button type="button" class="grow h-[2.125rem] rounded-[0.25rem] bg-[#191919] text-white">Create</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="editDeliverablesModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200">
+		<div class="bg-white rounded-md shadow-lg w-full max-w-[640px] relative ">
+			<div class="flex justify-between items-center border-b px-6 py-3">
+				<div class="flex justify-between items-center w-full">
+					<h2 class=" text-base">Edit Deliverables</h2>
+					<img id="closeDeliverablesModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+				</div>
+			</div>
+			
+			<div class="px-6 py-4">
+				<p class="mb-1.5">Deliverables</p>
+				<div class=" text-[#656565] mb-4 flex items-start text-sm">
+					<img src="../../icons/Info.svg" alt="" class="w-4 h-4 mr-1">
+					<p class="leading-5">Setting deliverables for your plan allows you to reach out to influencers to obtain cost estimates and gain access to CPE and CPV metrics. Deliverables, Posts & Costs will be applied to all the profiles in the list.</p>
+				</div>
+				
+				<div class="flex items-center justify-between space-x-3 mb-3">
+					<select class="border rounded-md px-3 py-2  outline-none grow text-[#656565] hover:cursor-pointer">
+						<option selected disabled>Select Deliverable</option>
+						<option>Post</option>
+						<option>Story</option>
+						<option>Reel</option>
+					</select>
+					<div class="flex items-center justify-between grow border px-3 py-2 rounded-md">
+						<span class="">1 Qty</span>
+						<div class="flex items-center space-x-3">
+							<img src="../../icons/Minus.svg" alt="" class="hover:cursor-pointer">
+							<img src="../../icons/PlusBlack.svg" alt="" class="hover:cursor-pointer">
+						</div>
+					</div>
+					<input type="text" placeholder="Cost (Optional)" class="border rounded-md px-3 py-2 grow">
+					<button class="text-gray-400 hover:text-gray-600 w-fit">
+						<img src="../../icons/X.svg" class="w-4 h-4" alt="Remove">
+					</button>
+				</div>
+				<button class="border rounded-md px-3 py-1 text-xs flex items-center">
+					<img src="../../icons/PlusBlack.svg" alt="" class="hover:cursor-pointer mr-1.5"> Add More
+				</button>
+			</div>
+			<div class="flex justify-end items-center border-t px-6 py-3">
+				
+				<div class="flex justify-end space-x-2">
+					<button id="cancelDeliverablesModal" class="px-4 py-2 rounded-md border ">Cancel</button>
+					<button class="px-4 py-2 rounded-md bg-black text-white ">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ManageColumnOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200">
+		<div class="p-6 bg-white max-w-2xl rounded-md shadow-lg w-full relative space-y-10">
+			<div class="flex justify-between items-center">
+				<h2 class="text-[#191919]">Manage Columns</h2>
+				<img id="closeManageColumn" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+			</div>
+			
+			
+			<div>
+				<h3 class="text-xs text-gray-400 uppercase mb-4">Audience Metrics</h3>
+				<div id="audience-metrics" class="grid grid-cols-3 gap-4"></div>
+			</div>
+			
+			<div>
+				<h3 class="text-xs text-gray-400 uppercase mb-4">Plan Metrics</h3>
+				<div id="plan-metrics" class="grid grid-cols-3 gap-4"></div>
+			</div>
+			
+			<div>
+				<h3 class="text-xs text-gray-400 uppercase mb-4">Platform Metrics</h3>
+				<div id="platform-metrics" class="grid grid-cols-3 gap-4"></div>
+			</div>
+		</div>
+		
+	</div>
+	<div id="editInfluencerCostModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex justify-center items-center transition-opacity duration-300">
+		<div class="bg-white rounded-md p-4 w-full max-w-md  text-[#191919] relative">
+			<div class="flex justify-between items-center pb-4">
+				<h2 class="text-lg">Edit Influencer Cost</h2>
+				<img id="closeInfluencerCostModal" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+			</div>
+			
+			<!-- ←— Dynamic deliverables go here —→ -->
+			<div class="flex w-full mb-3 text-xs text-[#656565]">
+				<span class="w-1/2">Deliverables</span>
+				<span class="w-1/2">Cost</span>
+			</div>
+			<div id="deliverablesContainer" class="space-y-4"></div>
+			
+			<div class="flex justify-end items-center mt-3 space-x-4">
+				<span class="text-[#656565] ">Total Cost</span>
+				<span class="total-cost">₹ 0</span>
+			</div>
+			
+			<div class="flex justify-end mt-6 space-x-3">
+				<button id="cancelInfluencerCostModal" class="px-6 h-[27px] border rounded text-[#656565] hover:border-[#191919] hover:text-[#191919]">
+					Cancel
+				</button>
+				<button class="px-6 h-[27px] bg-black text-white rounded save-cost-btn">
+					Save
+				</button>
+			</div>
+		</div>
+	</div>
+	<div id="addNewListModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex justify-center items-center transition-opacity duration-300">
+		<div class="bg-white rounded-lg py-3 space-y-4 w-full max-w-md ">
+			<div class="flex justify-between items-center border-b px-6 pb-3">
+				<h2 class="text-[#191919] text-lg">Add New List</h2>
+				<img id="closeAddNewListModalButton" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+			</div>
+			<div class="space-y-5 px-6">
+				<div class="space-y-3">
+					<label class="text-[#474747]">List Name</label>
+					<input type="text" class="border rounded-md w-full py-1 px-3 outline-none placeholder:text-sm mt-1.5" placeholder="Enter list name" />
+				</div>
+				
+				<div class="space-y-3">
+					<label class="text-[#474747]">Choose platform</label>
+					<div class="flex items-center gap-2 mt-3">
+						<button type="button" class="bg-[#FCE9E9] platformIconsE px-2 py-1 text-[#474747] rounded-md flex items-center" style="border: 1px solid #E02424;">
+							<img src="../../icons/instagram-icon.svg" alt="" class="mr-2"> Instagram
+						</button>
+						<button type="button" class="bg-white platformIconsE px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+							<img src="../../icons/youtube.svg" alt="" class="mr-2"> YouTube
+						</button>
+						<button type="button" class="bg-white platformIconsE px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+							<img src="../../icons/tiktok.svg" alt="" class="mr-2"> TikTok
+						</button>
+					</div>
+				</div>
+				
+				
+				<div class="flex justify-end gap-2 border-t pt-3">
+					<button id="cancelAddNewListButton" class="border rounded-md px-3 py-1">Cancel</button>
+					<button class="bg-black text-white rounded-md px-3 py-1">Add List</button>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	<div id="editListModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex justify-center items-center transition-opacity duration-300">
+		<div class="bg-white rounded-lg py-3 space-y-4 w-full max-w-md ">
+			<div class="flex justify-between items-center border-b px-6 pb-3">
+				<h2 class="text-[#191919] text-lg">Edit List</h2>
+				<img id="closeEditListModalButton" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+			</div>
+			<div class="space-y-5 px-6">
+				<div class="space-y-3">
+					<label class="text-[#474747]">List Name</label>
+					<input type="text" class="border rounded-md w-full py-1 px-3 outline-none placeholder:text-sm mt-1.5" placeholder="Enter list name" />
+				</div>
+				
+				<div class="space-y-3">
+					<label class="text-[#474747]">Choose platform</label>
+					<div class="flex items-center gap-2 mt-3">
+						<button type="button" class="bg-[#FCE9E9] platformIconsEdit px-2 py-1 text-[#474747] rounded-md flex items-center" style="border: 1px solid #E02424;">
+							<img src="../../icons/instagram-icon.svg" alt="" class="mr-2"> Instagram
+						</button>
+						<button type="button" class="bg-white platformIconsEdit px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+							<img src="../../icons/youtube.svg" alt="" class="mr-2"> YouTube
+						</button>
+						<button type="button" class="bg-white platformIconsEdit px-2 py-1 text-[#474747] border rounded-md flex items-center" style="border: 1px solid #e8e8e8;">
+							<img src="../../icons/tiktok.svg" alt="" class="mr-2"> TikTok
+						</button>
+					</div>
+				</div>
+				
+				
+				<div class="flex justify-end gap-2 border-t pt-3">
+					<button id="deleteEditListButton" class="border rounded-md px-3 py-1">Delete List</button>
+					<button id="editListButton" class="bg-black text-white rounded-md px-3 py-1">Update List</button>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	<div id="contactDetailsOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200 ">
+		<!-- Unlocked content behind lockedState initially, but blurred -->
+		<div id="unlockedState" class="relative w-full max-w-lg flex items-center justify-center transition duration-300 bg-white rounded-xl shadow-xl text-[#191919]">
+			<div id="lockedState" class=" absolute inset-0 backdrop-blur-sm flex items-center justify-center">
+				<div class="bg-white rounded-md border px-3 py-6 max-w-sm text-center">
+					<h3 class="text-base ">Unlock the contact details to reach out.</h3>
+					<p class=" text-[#656565] text-xs mt-2">
+						Unlock now to access direct contact info, key decision-makers, and personalized connection opportunities
+					</p>
+					<button id="unlockBtn" class="mt-4 w-full max-w-[204px] h-[27px]  inline-flex items-center justify-center space-x-2 bg-black text-white rounded-lg hover:bg-gray-800 transition text-xs">
+						<img src="../../icons/lock.svg" class="" alt="">
+						<span class="leading-none pt-0.5">Unlock Contact</span>
+					</button>
+				</div>
+			</div>
+			<div class="space-y-6 w-full p-6">
+				<!-- Locked state overlays everything -->
+				
+				<div class="flex justify-between items-center">
+					<h2 class="text-lg">Contact Details for <span class="contact-name">Someone</span></h2>
+					<img id="closeContactDetails" src="../../icons/X.svg" alt="" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+				</div>
+				
+				<div class="flex flex-col items-start space-y-2">
+					<div class="flex items-center">
+						<label class="mr-1">Mark as Default</label>
+						<img src="../../icons/Info.svg" alt="">
+					</div>
+					
+					<div class="flex justify-between items-center w-full space-x-2">
+						<button type="button" class=" bg-[#FAFAFA] shrink grow rounded-md border py-2 px-3 flex justify-between items-center">
+							<span class="">viratKohli@gmail.com</span>
+							<img src="../../icons/CaretUpDown.svg" alt="" class="ml-2 w-3">
+						</button>
+						<button type="button" class=" bg-[#FAFAFA] shrink grow rounded-md border py-2 px-3 flex justify-between items-center">
+							<span class="">+91 9999999999</span>
+							<img src="../../icons/CaretUpDown.svg" alt="" class="ml-2 w-3">
+						</button>
+					</div>
+				</div>
+				
+				<div class="flex justify-between">
+					<label class="">Email Address</label>
+					
+					<div id="emailContainer" class="flex flex-col space-y-2 max-w-full">
+						<!-- JS will inject emails here -->
+					</div>
+				</div>
+				
+				<div class="flex justify-between">
+					<label class="">Phone Number</label>
+					<div id="phoneContainer" class="flex flex-col space-y-2 max-w-full">
+						<!-- JS will inject phones here -->
+					</div>
+				</div>
+				
+				<div class="flex justify-end space-x-3">
+					<button id="cancelContactDetails" class="px-8 h-[27px] border rounded-md hover:bg-gray-50 transition">Cancel</button>
+					<button class="px-8 h-[27px] bg-black text-white rounded-md hover:bg-gray-800 transition">Save</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div id="editClientCostModalOverlay" class="fixed z-60 inset-0 bg-gray-700/20 backdrop-blur-sm opacity-0 pointer-events-none flex items-center justify-center transition-opacity duration-200">
+		<div class="bg-white rounded-md p-4 w-full max-w-[420px]  text-[#191919] relative">
+			<!-- header -->
+			<div class="flex justify-between items-center pb-1.5">
+				<h2 id="clientCostTitle" class="text-lg">Client Cost</h2>
+				<img id="closeClientCostModal" src="../../icons/X.svg" alt="Close" class="ml-3 h-4 w-4 hover:cursor-pointer" />
+			</div>
+			
+			<p id="clientCostSubtitle" class="text-xs text-[#656565] mb-4">
+				You can update the client cost, which will be displayed to shared
+				recipients instead of the influencer’s original cost. The total influencer
+				cost is ₹0.
+			</p>
+			
+			<div class="flex justify-between items-center mb-6">
+				<label class="">Client Cost</label>
+				<div class="border rounded-md px-3 py-1 flex items-center space-x-2">
+					<select id="clientCostCurrency" class="outline-none">
+						<option value="₹">₹</option>
+					</select>
+					<input id="clientCostInput" type="text" class="grow outline-none" value="0" />
+				</div>
+			</div>
+			
+			<div class="flex justify-end space-x-3">
+				<button id="cancelClientCostModal" class="px-6 h-[27px] border rounded text-[#656565] hover:border-[#191919] hover:text-[#191919]">
+					Cancel
+				</button>
+				<button id="saveClientCostBtn" class="px-6 h-[27px] bg-black text-white rounded">
+					Save
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../../js/plan/list/list.js"></script>
+	<script src="../../js/common/sidebar.js"></script>
+	<script src="../../js/plan/list/header.js"></script>
+	<script src="../../js/plan/list/share.js"></script>
+	<script src="../../js/plan/list/manageColumns.js"></script>
+	<script src="../../js/plan/list/addList.js"></script>
+	<script src="../../js/plan/list/editList.js"></script>
+	<script src="../../js/plan/list/contactDetails.js"></script>
+</body>
+
+</html>
