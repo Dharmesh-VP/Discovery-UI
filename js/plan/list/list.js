@@ -826,12 +826,39 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	influencerCost();
 
-	// .....................................................................................................................................................
-
 	// Edit Client Cost.....................................................................................................................................
 
 	clientCost();
 
-	// .....................................................................................................................................................
+	// Add Influencers.....................................................................................................................................
+	
 	addInfluencers();
+
+	// Table Select........................................................................................................................................
+
+	const selectAll = document.getElementById("selectAll");
+	const rows = document.querySelectorAll("tbody tr");
+
+	selectAll.addEventListener("change", function () {
+		rows.forEach((row, index) => {
+			const checkboxWrapper = row.querySelector(
+				"td .relative.flex.flex-col",
+			);
+			const number = checkboxWrapper.querySelector("p");
+			const checkbox = checkboxWrapper.querySelector(
+				"input[type='checkbox']",
+			);
+
+			checkbox.checked = selectAll.checked;
+
+			// Toggle visibility
+			if (selectAll.checked) {
+				number.classList.add("hidden");
+				checkbox.classList.remove("hidden");
+			} else {
+				number.classList.remove("hidden");
+				checkbox.classList.add("hidden");
+			}
+		});
+	});
 });
