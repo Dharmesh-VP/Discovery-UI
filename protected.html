@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Protected Page</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		body {
+			font-family: 'Figtree', sans-serif;
+			background: linear-gradient(to top right, #ffffff, #d0d5dff2);
+		}
+		
+		input:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.6);
+		}
+		
+		button:hover {
+			background-color: #6366f1;
+		}
+	</style>
+	<script>
+		(function () {
+			const _0xabc4 = [
+				'getItem',
+				'access_granted',
+				'yes',
+				'location',
+				'href',
+				'/plan/plan.html',
+				'getElementById',
+				'value',
+				'setItem',
+				'Wrong\x20key.',
+				'JgHA3XiNLR',
+				'log'
+			];
+			const _0x4d3e = function (_0x112e1a, _0x30e21a) {
+				_0x112e1a = _0x112e1a - 0x0;
+				return _0xabc4[_0x112e1a];
+			};
+			try {
+				if (localStorage[_0x4d3e('0x0')](_0x4d3e('0x1')) === _0x4d3e('0x2')) {
+					window[_0x4d3e('0x3')][_0x4d3e('0x4')] = _0x4d3e('0x5');
+				}
+			} catch (_0xea5f6b) {
+				console[_0x4d3e('0xb')]('Access check error:', _0xea5f6b);
+			}
+			
+			window['checkKey'] = function () {
+				const _0xkey = document[_0x4d3e('0x6')]('accessKey')[_0x4d3e('0x7')];
+				if (_0xkey === _0x4d3e('0xa')) {
+					localStorage[_0x4d3e('0x8')](_0x4d3e('0x1'), _0x4d3e('0x2'));
+					window[_0x4d3e('0x3')][_0x4d3e('0x4')] = _0x4d3e('0x5');
+				} else {
+					alert(_0x4d3e('0x9'));
+				}
+			};
+		})();
+	</script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen px-4">
+	<div class="bg-white shadow-xl border border-gray-200 rounded-2xl max-w-md w-full p-8 space-y-6">
+		<h2 class="text-2xl font-semibold text-center text-gray-800">🔒 Access Required</h2>
+		<p class="text-sm text-gray-500 text-center">Please enter your secret key to continue.</p>
+		<div class="space-y-4">
+			<input type="password" id="accessKey" placeholder="Enter key here" class="w-full px-4 py-2 border rounded-lg border-gray-300 focus:ring focus:ring-indigo-200 transition" />
+			<button onclick="checkKey()" class="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-lg transition hover:bg-indigo-700">
+				Unlock
+			</button>
+		</div>
+		<p class="text-xs text-gray-400 text-center pt-4">
+			Authorized access only. All actions are monitored. 🚨
+		</p>
+	</div>
+</body>
+
+</html>
