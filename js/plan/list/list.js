@@ -733,6 +733,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	setupDropdown("listNameDropdownButton", "listNameDropdownMenu");
 	setupDropdown("btnMoreList", "ddMoreList");
 	setupDropdown("messageDropdownBtn", "messageDropdownMenu");
+	setupDropdown("listSelectBtn", "listDropdown");
 	openMessageDiv("selectAll", "messageBtnDiv");
 	setupModal({
 		overlayId: "editDeliverablesModalOverlay",
@@ -754,6 +755,38 @@ document.addEventListener("DOMContentLoaded", async () => {
 		openBtnIds: ["editList"],
 		closeBtnIds: ["closeEditListModalButton"],
 	});
+
+	// First Line .......................................................................................................................................
+
+	const addMoreBtn = document.getElementById("addMoreEditDeliverable");
+	const deliverableContainer = document.getElementById(
+		"deliverableContainer",
+	);
+	const template = document.getElementById("deliverableTemplate");
+
+	function createDeliverableRow() {
+		const clone = template.content.firstElementChild.cloneNode(true);
+
+		// Reset fields
+		clone.querySelector("select").selectedIndex = 0;
+		clone.querySelector("input").value = "";
+
+		// Remove button logic
+		clone.querySelector(".remove-btn").addEventListener("click", () => {
+			clone.remove();
+		});
+
+		return clone;
+	}
+
+	addMoreBtn?.addEventListener("click", () => {
+		const newRow = createDeliverableRow();
+		deliverableContainer.appendChild(newRow);
+	});
+
+	if (deliverableContainer.children.length === 0) {
+		deliverableContainer.appendChild(createDeliverableRow());
+	}
 
 	// Second Line........................................................................................................................................
 

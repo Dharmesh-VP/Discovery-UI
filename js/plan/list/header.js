@@ -24,3 +24,12 @@ setupSearchableDropdown({
 		document.getElementById("brandDropdownToggle").textContent = brand;
 	},
 });
+
+document.querySelectorAll("#listDropdown li").forEach((item) => {
+	item.addEventListener("click", () => {
+		document.getElementById("selectedList").textContent =
+			item.getAttribute("data-value");
+		document.getElementById("listDropdown").classList.add("hidden");
+		openDropdowns.delete(document.getElementById("listDropdown"));
+	});
+});
